@@ -1,0 +1,15 @@
+<!-- 选择省市区 -->
+<van-action-sheet show="{{ show }}" title="选择城市" bind:close="onClose">
+  <view class="chooseArea-mask" catchtouchmove="{{true}}">
+      <view class="chooseArea-header">
+      <text wx:for="{{stepArr}}"  wx:key="index" class="{{(index+1)==step?'isChoosed':''}}" wx:if='{{index<step}}' bindtap='chooseHeaderItem' data-index='{{index}}'>{{item}}</text>
+      </view>
+      <scroll-view class="chooseArea-content" scroll-y="true" >
+        <view wx:for="{{list}}" wx:key="index" bindtap="chooseItems" data-name="{{item.name}}" data-type='{{item.type}}' data-index="{{index}}" data-id="{{item.id}}">
+          <text class="{{(type==4)&&(isClicked==index)?'confirm-btn':''}}">{{item.name}}</text>
+        </view>
+      </scroll-view>
+
+      <view class="confirm-btn" bindtap="handleSubmit">确定</view>
+    </view>
+</van-action-sheet>

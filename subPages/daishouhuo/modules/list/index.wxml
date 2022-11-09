@@ -1,0 +1,34 @@
+<scroll-view class="list" scroll-y style="height: {{height}}px;" bindscrolltolower="bindScrollToLower">
+  <no-search wx:if="{{!result.length}}"></no-search>
+  <view class="apply-item" wx:for="{{result}}">
+    <view class="apply-num" data-id="{{item.order_id}}" bindtap="toCgxq">
+      <text class="num">NO.{{item.order_no}}</text>
+      <text class="status dsh" wx:if="{{item.order_status == 3}}">待收货</text>
+      <text class="status ysh" wx:else>已收货</text>
+      <image src="/images/right1.png"></image>
+    </view>
+    <text class="time">{{item.time}}</text>
+    <image src="/images/line.png" class="line"></image>
+    <view class="goods-item" wx:for="{{item.order_goods}}">
+      <image class="goods-item-image" src="{{url+item.sku_image}}"></image>
+      <view class="goods-item-content">
+        <view class="goods-item-content-name">
+          <text>{{item.sku_name}}</text>
+          <text>X{{item.num}}</text>
+        </view>
+        <view class="goods-item-content-price">¥{{item.price}}</view>
+      </view>
+    </view>
+    <view class="goods-num">
+      <text>共{{item.order_goods.length}}件，合计金额¥</text>
+      <text>{{item.order_money}}</text>
+    </view>
+
+    <view class="option-btn">
+      <view class="cancel" data-id="{{item.order_id}}" bindtap="toDetail">
+        采购详情
+      </view>
+      <view class="confirm" wx:if="{{item.order_status == 3}}" data-id="{{item.order_id}}" bindtap="confirmHandler">确认收货</view>
+    </view>
+  </view>
+</scroll-view>

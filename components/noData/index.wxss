@@ -1,0 +1,20 @@
+/* components/noData/index.wxss */
+.noData-content {
+  margin-top: 150rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.noData-content .img {
+  width: 324rpx;
+  height: 312rpx;
+  margin: 0 auto;
+}
+
+.noData-content .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #999999;
+  margin-top: 42rpx;
+}

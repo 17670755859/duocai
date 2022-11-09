@@ -1,0 +1,13 @@
+/* pages/wode/num/index.wxss */
+.num {
+  height: 32rpx;
+  background: #FF6868;
+  border-radius: 16rpx 16rpx 16rpx 0;
+  text-align: center;
+  padding: 0rpx 10rpx;
+  color: #FFFFFF;
+  position: absolute;
+  right: -30rpx;
+  top: -10rpx;
+  font-size: 22rpx;
+}

@@ -1,0 +1,72 @@
+@import "/commen/caigou.wxss";
+.container{
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.item {
+    display: flex;
+  }
+  
+  /* 除删除按钮之外的其他部分 */
+  .item-left {
+    /* 关键代码 start */
+    width: 100%;
+    margin-left: -112rpx;
+    transform: translateX(112rpx);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: translateX(112rpx);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    /* 关键代码 end */
+  }
+  
+  /* 删除按钮 */
+  .delete {
+    width: 112rpx;
+min-height: 272rpx;
+background: #FF6868;
+border-radius: 0px 24rpx 24rpx 0px;
+    text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    font-size: 28rpx;
+font-weight: 400;
+color: #FFFFFF;
+    /* 关键代码 start */
+    transform: translateX(150rpx);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: translateX(150rpx);
+    /* 关键代码 end */
+  }
+  
+  /* 关键代码 start --> 向左滑动 */
+  .touch-move-active .item-left,
+  .touch-move-active .delete {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  .product-item {
+      width: 94%;
+      margin: 24rpx auto;
+      background-color: #ffffff;
+      /* padding: 32rpx 24rpx; */
+      box-sizing: border-box;
+  }
+
+
+
+.product-item-image {
+    margin-left: 24rpx;
+}
+
+
+.product-item-content{
+    margin-right: 8rpx;
+}

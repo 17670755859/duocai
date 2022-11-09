@@ -1,0 +1,12 @@
+<!--subPages/selectbumen/index.wxml-->
+<view>
+  <van-tree-select
+  items="{{ items }}"
+  main-active-index="{{ mainActiveIndex }}"
+  active-id="{{ activeId }}"
+  bind:click-nav="onClickNav"
+  bind:click-item="onClickItem"
+/>
+<view class="confirm" bindtap="toConfirm" wx:if="{{items.length>0}}">确认</view>
+<view class="confirm" bindtap="goAddBumen" wx:else>去添加</view>
+</view>

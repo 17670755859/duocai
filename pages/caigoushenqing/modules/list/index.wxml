@@ -1,0 +1,44 @@
+<scroll-view class="list" scroll-y style="height: {{height}}px;" refresher-threshold="{{100}}" bindscrolltolower="bindScrollToLower">
+  <no-search wx:if="{{!result.length}}"></no-search>
+	<view class="apply-item" bindtap="toDetail" data-id='{{item.order_id}}' wx:key="index" wx:for="{{result}}">
+		<view class="apply-num">
+			<text class="num">{{item.order_no}}</text>
+			<text class="status {{item.statu_color}}">{{item.statu_text}}</text>
+			<image src="/images/right1.png"></image>
+		</view>
+		<text class="time">{{item.create_time}}</text>
+		<image src="/images/line.png" class="line"></image>
+		<view class="goods-item" wx:key="id" wx:for="{{item.order_goods}}">
+			<image class="goods-item-image" src="{{url+item.sku_image}}"></image>
+			<view class="goods-item-content">
+				<view class="goods-item-content-name">
+					<text>{{item.sku_name}}</text>
+					<text>X{{item.num}}</text>
+				</view>
+				<view class="goods-item-content-price">¥{{item.price}}</view>
+			</view>
+		</view>
+		<view class="goods-num">
+			<text>共{{item.goods_num}}件，合计金额</text>
+			<text>¥</text>
+			<text>{{item.goods_money}}</text>
+		</view>
+    <!-- <view class="option-btn" wx:if="{{item.order_status == 4}}">
+      <view class="confirm">
+        再次下单
+      </view>
+    </view> -->
+		<view class="option-btn" wx:if="{{item.order_status == 5}}">
+			<view class="cancel" data-orderid="{{item.order_id}}" data-index="{{index}}" catchtap="chexiao">
+				撤销
+			</view>
+			<view class="confirm" data-id="{{item.order_id}}" catchtap="toXiugai">
+				修改
+			</view>
+		</view>
+	</view>
+  <view style="height: {{isIPhoneX ? '168' : 108}}rpx;"></view>
+</scroll-view>
+
+<!-- 撤销操作弹窗 -->
+<chexiao id="chexiao" show="{{show_cx}}" list="{{goods}}" bind:confirm="revokeHandler"></chexiao>

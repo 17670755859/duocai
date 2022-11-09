@@ -1,0 +1,12 @@
+@import "/commen/caigou.wxss";
+page {
+  background: #F7F8FA;
+}
+.product-item{
+width: 94%;
+margin: 24rpx auto;
+background: #fff;
+border-radius: 24rpx;
+padding: 32rpx 24rpx ;
+box-sizing: border-box;
+}

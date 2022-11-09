@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "企业认证",
+    "usingComponents": {
+        "van-radio": "@vant/weapp/radio/index",
+        "step":"../modules/steps/index"
+    }
+}

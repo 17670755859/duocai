@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "no-search": "/components/noSearch/index"
+  }
+}

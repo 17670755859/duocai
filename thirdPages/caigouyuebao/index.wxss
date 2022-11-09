@@ -1,0 +1,262 @@
+
+.container{
+  width: 100%;
+  border-radius: 0 0 24rpx 24rpx;
+}
+.timer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.timer>text {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+  padding-left: 24rpx;
+}
+
+.timer>image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 12rpx;
+}
+
+.price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:32rpx 24rpx;
+}
+.price>view{
+  box-sizing: border-box;
+  padding-left: 24rpx;
+  flex: 1;
+  height: 190rpx;
+  border-radius: 24rpx;
+  /* margin-left: 24rpx; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.price>view:nth-child(1){
+  background: linear-gradient(360deg, #2362ED 0%, #6191FD 100%);
+}
+.price>view:nth-child(2){
+  background: linear-gradient(180deg, #9AB9FF 0%, #6191FD 100%);
+  margin-left: 24rpx;
+}
+.price >.price-box-dc{
+  background: #F7F8FA!important;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+}
+.title>view{
+  width: 8rpx;
+  height: 32rpx;
+  background-color: #ffffff;
+}
+.price >.price-box-dc .title>view{
+  background-color: #2362ED;
+}
+.title>text{
+  font-size: 24rpx;
+font-weight: 400;
+color: rgba(255,255,255,0.62);
+margin-left: 16rpx;
+
+}
+
+.price-box>text{
+  font-size: 51rpx;
+font-weight: 600;
+color: #FFFFFF;
+margin-top: 14rpx;
+}
+.price >.price-box-dc  .title>text,.price-box-dc>text{
+  color: #333333;
+}
+.circle-canvas{
+  width: 100%;
+  height: 540rpx;
+  position: relative;
+  margin-top: 30rpx;
+}
+
+.circel-legend{
+  position: absolute;
+  right: 78rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 300rpx;
+  flex-direction: column;
+  top: 30rpx;
+}
+
+.circel-legend-item{
+  display: flex;
+  flex-direction: row;
+}
+.circel-legend-item>.circle{
+  width: 20rpx;
+height: 20rpx;
+border-radius: 50%;
+}
+.circle-text{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 18rpx;
+  margin-top: -10rpx;
+}
+.circle-text>text:nth-child(1){
+font-size: 30rpx;
+font-weight: 600;
+color: #333333;
+
+}
+.circle-text>text:nth-child(2){
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #999999;
+  margin-top: 8rpx;
+  }
+
+  .dc{
+    background-color: #2362ED;
+  }
+  .yx{
+    background-color: #7aa0f4;
+  }
+
+  .jd{
+    background-color: #bbcff9;
+  }
+
+.next-box{
+  margin-top: -120rpx;
+  /* height: 400rpx; */
+
+
+
+}
+.divider{
+  width: 100%;
+  height: 24rpx;
+  background: #F7F8FA;
+
+}
+
+.price-box-list{
+  display: flex;
+  flex-direction: row;
+}
+.price-box-item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.price-box-item>text{
+  font-size: 36rpx;
+font-weight: 600;
+color: #333333;
+}
+.price-box-item>view{
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-top: 4rpx;
+
+}
+.price-box-item>view>image{
+  width: 31rpx;
+  height: 31rpx;
+}
+.price-box-item>view>text{
+  font-size: 24rpx;
+font-weight: 400;
+color: #333333;
+margin-left: 2rpx;
+}
+.next-box-1{
+  margin-top: 0;  
+}
+.commen-view-title{
+width: 94%;
+margin: 0 auto;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-top: 24rpx;
+}
+.commen-view-title>view{
+  width: 8rpx;
+height: 32rpx;
+background: #6191FD;
+}
+.commen-view-title>text{
+  font-size: 30rpx;
+font-weight: 500;
+color: #333333;
+margin-left: 12rpx;
+}
+.line-echart{
+  width: 100%;
+  height: 600rpx;
+  position: relative;
+}
+
+.next-box-2{
+  margin-top: -130rpx;
+}
+.next-box-padding{
+  padding-bottom: 32rpx;
+}
+.progress-box{
+  padding: 0 24rpx 32rpx;
+  box-sizing: border-box;
+}
+.process-box-image{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.process-box-image>image{
+  width: 32rpx;
+  height: 32rpx;
+}
+.process-box-image>.text1{
+  font-size: 30rpx;
+font-weight: 400;
+color: #333333;
+margin-left: 12rpx;
+flex: 1;
+}
+
+.process-box-image>.text2{
+  font-size: 30rpx;
+font-weight: 500;
+color: #333333;
+}
+.process-box-image>.text3{
+  font-size: 30rpx;
+font-weight: 500;
+color: #333333;
+margin-left: 24rpx;
+}
+.process-box-image-margin{
+  margin-top: 32rpx;
+}
+.next-box-3{
+  margin-top: 0;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}

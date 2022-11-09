@@ -1,0 +1,23 @@
+<view class="container">
+  <!-- <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;'>
+      <image src="/images/left1.png" bindtap="naviBack"></image>
+      <text>开票信息</text>
+
+    </view>
+  </view> -->
+  <view class="background"></view>
+  <view class="commen-box">
+    <van-cell-group>
+      <van-field value="{{ make_company }}" data-name="make_company" bind:change="inputBlur" clearable label="单位名称"  required placeholder="请输入单位名称" bind:click-icon="onClickIcon" />
+      <van-field value="{{ make_duty }}" data-name="make_duty" bind:change="inputBlur" type="text" label="公司税号"  required placeholder="请输入公司税号" border="{{ false }}" />
+      <van-field value="{{ make_address }}" data-name="make_address" bind:change="inputBlur" type="text" label="地址"  required placeholder="请输入地址" border="{{ false }}" />
+      <van-field value="{{ make_phone }}" data-name="make_phone" bind:change="inputBlur" type="number" label="电话"  placeholder="请输入电话" border="{{ false }}" />
+      <van-field value="{{ make_bank }}" data-name="make_bank" bind:change="inputBlur" type="text" label="开户行"  required placeholder="请输入开户行" border="{{ false }}" />
+      <van-field value="{{ make_number }}" data-name="make_number" bind:change="inputBlur" type="number" label="账号"  placeholder="请输入银行卡号" border="{{ false }}" />
+      <van-field value="{{ make_title }}" data-name="make_title" bind:change="inputBlur" type="number" label="抬头"  placeholder="请输入发票抬头" border="{{ false }}" />
+    </van-cell-group>
+  </view>
+  <view class="confirm" bindtap="submitHandler">提交</view>
+
+</view>

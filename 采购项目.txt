@@ -1,0 +1,9 @@
+接口文档地址：https://console-docs.apipost.cn/preview/96ebdf31b4b59ea9/c7056f1eaae5c1fe
+密码：k8s1
+
+请求地址：https://adapt.ewangnet.com/api/
+
+蓝湖地址：https://lanhuapp.com/url/hbKk5
+
+后台管理地址：adapt.ewangnet.com/shop
+账号：admin 密码：admin123

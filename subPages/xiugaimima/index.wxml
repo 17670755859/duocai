@@ -1,0 +1,38 @@
+<!--修改密码-->
+<view class="commen-view">
+    <view class="commen-view-item">
+            <text class="text1">手机号</text>
+            <text class="text2">{{phone}}</text>
+        </view>
+
+
+        <view class="login-item">
+      <text>密码</text>
+      <view class="login-item-input">
+        <input type="{{inputType}}" value="{{old_password}}" data-name="old_password" bindinput="inputBlur" placeholder="请输入登录密码" />
+        <image src="/images/eye-hidden.png" wx:if="{{inputType=='password'}}" bindtap="showPasType"></image>
+        <image src="/images/eye-show.png" wx:if="{{inputType=='text'}}" bindtap="showPasType"></image>
+      </view>
+
+    </view>
+
+
+    <view class="login-item">
+      <text>再次输入新密码</text>
+      <view class="login-item-input">
+        <input type="{{inputType}}" value="{{new_password}}" data-name="new_password" bindinput="inputBlur" placeholder="请再次输入新密码" />
+        <image src="/images/eye-hidden.png" wx:if="{{inputType=='password'}}" bindtap="showPasType"></image>
+        <image src="/images/eye-show.png" wx:if="{{inputType=='text'}}" bindtap="showPasType"></image>
+      </view>
+
+    </view>
+
+    <view class="options-group">
+<view class="cancel" bindtap="cancel">取消</view>
+<view class="confirm" bindtap="submitHandler"> 确认更改</view>
+
+</view>
+</view>
+
+
+

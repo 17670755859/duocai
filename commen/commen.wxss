@@ -1,0 +1,94 @@
+/* 联系团长样式 */
+
+.concat {
+  display: flex;
+  flex-direction: row;
+  margin: 32rpx 24rpx;
+
+}
+
+.concat>.header {
+  width: 128rpx;
+  height: 128rpx;
+
+  border-radius: 50%;
+}
+
+.concat>.address-box {
+  margin-left: 16rpx;
+  flex: 1;
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.concat>.address-box>image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 2rpx;
+}
+
+.concat>.address-box>.address-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* margin-left: 4rpx; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+}
+
+.concat>.address-box>.address-detail>image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.concat>.address-box>.address-detail>text {
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 4rpx;
+}
+
+
+
+
+
+.concat-options {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid red; */
+  /* align-items: center;
+  justify-content: center; */
+  margin-top: 42rpx;
+}
+
+.concat-options>view {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.concat-options>view:nth-child(2) {
+  justify-content: center;
+}
+
+.concat-options>view>image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.concat-options>view>text {
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 4rpx;
+}
+
+.concat-options>view:nth-child(1) {
+  border-right: 1px solid #CCCCCC;
+}
+
+.concat-options>view:nth-child(1)>image {
+  margin-left: 42rpx;
+}

@@ -1,0 +1,152 @@
+
+.container{
+  width: 100%;
+  border-radius: 0 0 24rpx 24rpx;
+}
+.tj-box{
+  padding: 32rpx 24rpx;
+  box-sizing: border-box;
+}
+.timer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.timer>text {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+  padding-left: 24rpx;
+}
+
+.timer>image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 12rpx;
+}
+
+.tongji{
+  height: 232rpx;
+background: linear-gradient(270deg, #2362ED 0%, #6191FD 100%);
+border-radius: 24rpx ;
+margin-top: 40rpx;
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.tongji>text{
+  padding-left: 40rpx;
+}
+
+.tongji>.text1{
+  font-size: 59rpx;
+font-weight: 600;
+color: #FFFFFF;
+}
+
+.tongji>.text2{
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(255,255,255,0.62);
+  margin-top: 16rpx;
+}
+.tongji>image{
+  position: absolute;
+  right: 40rpx;
+  bottom: 0;
+  width: 142rpx;
+  height: 142rpx;
+}
+
+
+
+
+.next-box{
+  margin-top: -120rpx;
+  /* height: 400rpx; */
+
+
+
+}
+.divider{
+  width: 100%;
+  height: 24rpx;
+  background: #F7F8FA;
+
+}
+
+
+
+
+.next-box-1{
+  margin-top: 0;  
+}
+.commen-view-title{
+width: 94%;
+margin: 0 auto;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-top: 24rpx;
+}
+.commen-view-title>view{
+  width: 8rpx;
+height: 32rpx;
+background: #6191FD;
+}
+.commen-view-title>text{
+  font-size: 30rpx;
+font-weight: 500;
+color: #333333;
+margin-left: 12rpx;
+}
+.line-echart{
+  width: 100%;
+  height: 600rpx;
+  position: relative;
+}
+
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.caigoumingxi{
+  margin-top: 40rpx;
+}
+.cgmx-box-title{
+  height: 60rpx;
+background: #F7F8FA;
+border-radius: 32rpx ;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin-top: 24rpx;
+}
+.cgmx-box-title>view{
+  width: 33%;
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+color: #C1C8D3;
+
+}
+
+.cgmx-box-item{
+  display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin-top: 30rpx;
+}
+.cgmx-box-item>view{
+  width: 33%;
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #333333;
+}

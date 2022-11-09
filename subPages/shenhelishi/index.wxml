@@ -1,0 +1,16 @@
+<van-tabs active="{{ active }}" title-active-color="#2362ED" title-inactive-color="#333333" color="#2362ED">
+
+  <van-tab title="全部">
+  <List height="{{height}}"/>
+  </van-tab>
+
+  <van-tab title="已通过">
+    <List height="{{height}}"/>
+  </van-tab>
+  <van-tab title="已驳回">
+    <List height="{{height}}"/>
+  </van-tab>
+
+
+</van-tabs>
+

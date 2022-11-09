@@ -1,0 +1,140 @@
+/* subPages/xiugai/index.wxss */
+page{
+  background: #F7F8FA;
+}
+.container{
+  width: 94%;
+  margin: 24rpx auto;
+  margin-bottom: 0;
+  background: #FFFFFF;
+border-radius: 24rpx ;
+padding: 34rpx 24rpx;
+box-sizing: border-box;
+padding-bottom: 120rpx;
+}
+
+.product-box{
+  padding: 30rpx 24rpx;
+  background: #FFFFFF;
+border-radius: 24rpx ;
+margin-top: 24rpx;
+}
+.product-item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 48rpx;
+}
+.product-item-image{
+  width: 184rpx;
+height: 184rpx;
+border-radius: 12rpx x;
+}
+.product-item-content{
+  flex: 1;
+  margin-left: 8rpx;
+  width: 0;
+}
+.product-item-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.product-item-title>.dc{
+  width: 72rpx;
+height: 32rpx;
+border-radius: 16rpx ;
+opacity: 1;
+border: 1rpx solid #2362ED;
+text-align: center;
+line-height: 32rpx;
+font-size: 24rpx;
+color: #2362ED;
+}
+
+.product-item-title> .title{
+  font-size: 28rpx;
+font-weight: 500;
+color: #333333;
+flex: 1;
+/* margin-left: 12rpx; */
+}
+.product-item-title>.num{
+  font-size: 28rpx;
+font-weight: 400;
+color: #999999;
+}
+.desc{
+  font-size: 28rpx;
+font-weight: 500;
+color: #333333;
+margin-top: 8rpx;
+white-space: nowrap; 
+/* width: 100%;  */
+
+overflow: hidden;
+text-overflow:ellipsis;
+min-width: 0;
+}
+.save-price{
+  font-size: 24rpx;
+color: #FF6200;
+margin-top: 12rpx;
+}
+.price-box{
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: row;
+ align-items: center;
+}
+.price-num{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex: 1;
+}
+.cur-price{
+  font-size: 32rpx;
+  color:
+  #FF6200;
+  /* align-self: baseline; */
+}
+.ori-price{
+  font-size: 20rpx;
+font-weight: 400;
+color: #999999;
+margin-left: 8rpx;
+/* align-self: baseline; */
+}
+.options-btn{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* background: #FFFFFF; */
+/* box-shadow: 0px -2rpx 0px 1rpx #EEEEEE; */
+align-items: center;
+justify-content: space-around;
+height: 120rpx;
+position: fixed;
+z-index: 999;
+bottom: 0;
+left: 0;
+}
+.options-btn>view{
+  flex: 1;
+  margin-left: 24rpx;
+  height: 88rpx;
+background: #F3F7FE;
+border-radius: 44rpx ;
+text-align: center;
+line-height: 88rpx;
+font-size: 34rpx;
+}
+.options-btn>.cancel{
+  background: #F3F7FE;
+  color: #2362ED;
+}
+.options-btn>.confirm{
+  background: linear-gradient(312deg, #2362ED 0%, #6191FD 100%);
+  color: #fff;
+  margin-right: 24rpx;
+}

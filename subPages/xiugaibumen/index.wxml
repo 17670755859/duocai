@@ -1,0 +1,42 @@
+<!-- 新增部门 -->
+<view class="container">
+  <view class="login-box">
+    <view class="login-item" bindtap="toShowDept">
+      <text>上级部门</text>
+      <view class="login-item-input">
+        <input type="text" value="{{parentName}}" disabled placeholder="请选择上级部门" />
+        <image src="/images/right.png"></image>
+      </view>
+
+    </view>
+
+    <view class="login-item">
+      <text>部门名称</text>
+      <view class="login-item-input">
+        <input bindinput="inputBlur" data-name="name" value="{{name}}" type="text" placeholder="请输入部门名称" />
+      </view>
+    </view>
+
+    <view class="confirm" bindtap="toConfirm">确认</view>
+
+  </view>
+</view>
+
+
+<!-- <van-action-sheet show="{{ show }}" title="请选择部门" bind:close="onClose">
+  <view class="dept-title">
+    <text>班级</text>
+    <text>大班</text>
+    <text class="active">请选择部门</text>
+  </view>
+
+  <scroll-view scroll-y style="height:500rpx">
+    <view class="scoll-item" wx:for="{{20}}" bindtap="chooseDept" data-index="{{index}}">
+      <text class="{{activeIndex==index?'active':''}}">大班</text>
+      <image src="/images/right2.png" wx:if="{{activeIndex==index}}"></image>
+
+    </view>
+  </scroll-view>
+
+  <view class="confirm confirm1" bindtap="confirmDept"> 确定</view>
+</van-action-sheet> -->

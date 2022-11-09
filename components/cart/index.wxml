@@ -1,0 +1,170 @@
+<view class="cart">
+<view class="noData" wx:if="{{noTotal}}">您的购物车还没有数据</view>
+  <!-- <view class="divider"></view> -->
+  <van-checkbox-group value="{{ result }}" bind:change="onChange" >
+    <view class="cart-commen" wx:if="{{self_pick.length>0}}">
+      <view class="cart-title">
+        <image src="/images/ziti.png"></image>
+        <text>自提商品</text>
+      </view>
+
+      <block wx:for="{{self_pick}}" wx:for-index="bigIndex" wx:for-item="bigItem">
+        <view class="cart-checkbox">
+          <view class="item-check" wx:for="{{bigItem.activityGoods}}" wx:key="index" wx:for-item="item">
+            <van-checkbox class="checkboxes" name="{{item.id}}"  checked-color="#07C160"></van-checkbox>
+            <view class="shop-name" style="background-image: url({{item.cover_img}})"> </view>
+            <!-- <image src="{{item.activityGoods.cover_img}}" class="shop-name"></image> -->
+            <view class="shop-box">
+              <text class="name">{{item.name}}</text>
+              <view class="type">
+                <text class="buxiangou">{{item.is_limit==0?'不限购':'限购'+item.limit_num+item.specs}}</text>
+                <text class="price">¥ {{item.price}} {{item.specs?'/'+item.specs:''}}</text>
+              </view>
+
+              <view class="price-box">
+                <text class="tips">小计</text>
+                <text class="unit">￥</text>
+                <text class="price">{{item.subtotal}}</text>
+                <van-stepper value="{{ item.buy_num }}" min='0' integer  async-change  bind:overlimit="onStepperOver" bind:change="onStepperChange" data-communityid="{{item.community_id}}" data-id="{{item.activity_goods_id}}" input-class="numInput" minus-class="minus" plus-class="plus" data-bigindex="{{bigIndex}}" data-index="{{index}}" data-price="{{item.price}}" data-type="ziti" />
+              </view>
+            </view>
+          </view>
+
+        </view>
+
+        <view class="concat-head ">
+          <image src="{{bigItem.user.avatar}}" class="header" bindtap="toHeadHomePage" data-user_id="{{bigItem.user.id}}" ></image>
+          <view class="concat-head-box">
+            <view class="name-box" bindtap="caocatHead" data-user="{{bigItem.user}}">
+              <text class="name" catchtap="toHeadHomePage" data-user_id="{{bigItem.user.id}}">{{bigItem.user.nickname}}团长</text>
+              <image src="/images/lianxituanzhang1.png"></image>
+              <text class="lxtz">联系团长</text>
+            </view>
+
+            <view class="address" bindtap="toSignAddress" data-latitude="{{bigItem.location.latitude}}" data-longitude="{{bigItem.location.longitude}}">
+              <image src="/images/address.png"></image>
+              <view class="ziti-address">
+                <text>自提点：</text>
+                <view>
+                  <text >{{bigItem.location.address}}</text>
+                </view>
+              </view>
+              <!-- <text >自提点:成都市锦江区青年路123号合成天街</text> -->
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+
+
+
+
+
+
+    <view class="divider"></view>
+
+
+
+    <view class="cart-commen" wx:if="{{express.length>0}}">
+      <view class="cart-title">
+        <image src="/images/kuaidi.png"></image>
+        <text>快递商品</text>
+      </view>
+
+      <block wx:for="{{express}}" wx:for-item="bigItem" wx:for-index="bigIndex">
+        <view class="cart-checkbox">
+          <view class="item-check" wx:for="{{bigItem.activityGoods}}" wx:key="index" wx:for-item="item">
+            <van-checkbox name="{{item.id}}" checked-color="#07C160" class="checkboxes"></van-checkbox>
+            <view class="shop-name" style="background-image: url({{item.cover_img}})"> </view>
+            <!-- <image src="/images/order/tuli.png" class="shop-name"></image> -->
+            <view class="shop-box">
+              <text class="name">{{item.name}}</text>
+
+              <view class="type">
+                <text class="buxiangou">{{item.is_limit==0?'不限购':'限购'+item.limit_num+item.specs}}</text>
+                <text class="price">¥ {{item.price}} {{item.activityGoods.specs?'/'+item.specs:''}}</text>
+              </view>
+
+              <view class="price-box">
+                <text class="tips">小计</text>
+                <text class="unit">￥</text>
+                <text class="price">{{item.subtotal}}</text>
+                <van-stepper value="{{ item.buy_num }}" min='0' integer   async-change  bind:change="onStepperChange" data-type="kuaidi" data-communityid="{{item.community_id}}" data-id="{{item.activity_goods_id}}" input-class="numInput" minus-class="minus" plus-class="plus" data-bigindex="{{bigIndex}}" data-index="{{index}}" data-price="{{item.price}}" />
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- <view class="concat-head">
+          <image src="{{bigItem.user.avatar}}" class="header" bindtap="toHeadHomePage" data-user_id="{{bigItem.user.id}}"></image>
+          <view class="concat-head-box">
+            <view class="name-box" bindtap="caocatHead" data-user="{{bigItem.user}}">
+              <text class="name" catchtap="toHeadHomePage" data-user_id="{{bigItem.user.id}}">{{bigItem.user.nickname}}团长</text>
+              <image src="/images/lianxituanzhang1.png"></image>
+              <text class="lxtz">联系团长</text>
+            </view>
+
+
+            <view class="address" bindtap="toSignAddress" data-latitude="{{bigItem.location.latitude}}" data-longitude="{{bigItem.location.longitude}}">
+              <image src="/images/address.png"></image>
+              <view class="ziti-address">
+                <text>自提点：</text>
+                <view>
+                  <text >{{bigItem.location.address}}</text>
+                </view>
+              </view>
+             
+            </view>
+          </view>
+        </view> -->
+      </block>
+    </view>
+
+  </van-checkbox-group>
+  <view class="divider"></view>
+
+
+  <view class="cart-commen" wx:if="{{recommend.length>0}}">
+    <view class="cart-title">
+      <text>推荐活动</text>
+    </view>
+
+    <view class="recommend">
+      <view class="recommend-item" wx:for="{{recommend}}" bindtap="toActivityDetail" data-id="{{item.activity_id}}" data-community_id="{{item.community_id}}">
+        <!-- <image class="recommend-commodity-image" src="/images/order/tuli.png">  </image> -->
+        <view class="recommend-commodity-image" style="background-image: url({{item.cover_img}});"></view>
+        <view class="recommend-commodity-info">
+          <image src="/images/header.png" class="recommend-commodity-info-image"></image>
+          <view class="recommend-commodity-info-box">
+            <text class="name">{{item.name}}</text>
+            <text class="xiangou">{{item.is_limit==0?'不限购':'限购'+item.limit_num+item.specs}}</text>
+            <view class="price-box">
+              <view>
+                <text class="unit">￥</text>
+                <text class="price">{{item.price}}</text>
+                <text class="specif" wx:if="{{item.specs}}">/{{item.specs}}</text>
+              </view>
+              <image src="/images/add.png" class="add-image" catchtap="addCar" data-communityid="{{item.community_id}}" data-id="{{item.id}}"></image>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+  <view class="bottom" style="bottom:{{bottom}};padding-bottom: {{paddingBottom}}">
+    <van-checkbox value="{{ checked }}" bind:change="onSelectAll" style="margin-left: 24rpx;" checked-color="#07C160"></van-checkbox>
+    <text class="qx">全选</text>
+    <text class="hj">合计：</text>
+    <text class="unit">￥</text>
+    <text class="price">{{totalPrice}}</text>
+    <view bindtap="toConfirmOrder">去下单</view>
+  </view>
+
+</view>
+
+
+<concat-head id="concat-head" />

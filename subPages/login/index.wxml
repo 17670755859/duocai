@@ -1,0 +1,42 @@
+<!-- 登录 -->
+<view class="container">
+  <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;margin-right:{{jiaonang}}rpx'>
+      <!-- <view class="nav-back" bindtap="navigateBack">
+        <image src="/images/back2.png"></image>
+      </view> -->
+      <image src="/images/back2.png" class="login-nav-back" bindtap="navigateBack"></image>
+      <text class="nav-name">多采</text>
+    </view>
+  </view>
+  <image src="/images/login-back.png" class="login-back"></image>
+
+
+  <view class="login-tips">
+    <text>您好， </text>
+    <text>欢迎使用多采</text>
+  </view>
+
+  <view class="login-box">
+    <view class="login-item">
+      <text>手机号</text>
+      <view class="login-item-input">
+        <input type="text" bindinput="inputBlur" data-name="username" placeholder="请输入手机号" />
+      </view>
+
+    </view>
+
+    <view class="login-item">
+      <text>密码</text>
+      <view class="login-item-input">
+        <input type="{{inputType}}" bindinput="inputBlur" data-name="password" placeholder="请输入登录密码" />
+        <image src="/images/eye-hidden.png" wx:if="{{inputType=='password'}}" bindtap="showPasType"></image>
+        <image src="/images/eye-show.png" wx:if="{{inputType=='text'}}" bindtap="showPasType"></image>
+      </view>
+
+    </view>
+
+    <view class="confirm" bindtap="toConfirm">确认</view>
+
+  </view>
+</view>

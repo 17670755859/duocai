@@ -1,0 +1,89 @@
+<!-- /* 搜索列表页 */ -->
+<view class="container">
+  <view style="width:100%;background:#fff;padding-bottom:32rpx">
+    <van-search value="{{ keyword }}" bind:search="searchSubmit" bind:change="inputSearch" placeholder="请输入搜索关键词" field-class="search-input" clearable="{{true}}" />
+    <view class="filter">
+      <view class="zh xl jg {{item.active ? 'active' : ''}}" wx:for="{{sortArr}}" data-index="{{index}}" bindtap="selectSort">
+        <text>{{item.title}}</text>
+        <view wx:if="{{item.show}}">
+          <image src="/images/sjx-u.png" wx:if="{{!item.active || item.sort !== 'asc'}}"></image>
+          <image src="/images/sjx-u-active.png" wx:else></image>
+
+          <image src="/images/sjx-down.png" wx:if="{{!item.active || item.sort !== 'desc'}}"></image>
+          <image src="/images/sjx-down2-active.png" wx:else></image>
+        </view>
+      </view>
+      <view style="flex:1"></view>
+      <view class="sx">
+
+        <van-dropdown-menu active-color="#2362ED">
+          <van-dropdown-item id="item" title="筛选">
+            <view class="sx-content">
+              <view class="sx-content-cell">
+                <text class="title">价格区间</text>
+                <view class="input-box" hover-class="none" hover-stop-propagation="false">
+                  <input type="number" placeholder="最低价" value="{{lowPrice}}" data-name="lowPrice" bindinput="inputBlur" placeholder-class="input-placeholder"/>
+                  <text>-</text>
+                  <input type="number" placeholder="最高价" value="{{topPrice}}" data-name="topPrice" bindinput="inputBlur" placeholder-class="input-placeholder"/>
+                </view>
+              </view>
+              <view class="sx-content-cell">
+                <text class="title">品牌</text>
+                <view class="sx-content-cell-item">
+                  <view class="{{brandIndex==index?'active':''}}" wx:for="{{brand}}" bindtap="changeBrand" data-index="{{index}}" wx:key="{{item.id}}">{{item.value}}</view>
+                </view>
+              </view>
+              <view class="sx-content-cell">
+                <text class="title">材质</text>
+                <view class="sx-content-cell-item">
+                  <view class="{{materialIndex==index?'active':''}}" wx:for="{{material}}" bindtap="changeMeterilal" data-index="{{index}}" wx:key="{{item.id}}">{{item.value}}</view>
+                </view>
+              </view>
+              <view class="sx-content-cell">
+                <text class="title">产地</text>
+                <view class="sx-content-cell-item">
+                  <view class="{{placeIndex==index?'active':''}}" wx:for="{{place}}" bindtap="changePlace" data-index="{{index}}" wx:key="{{item.id}}">{{item.value}}</view>
+                </view>
+              </view>
+
+            </view>
+            <view class="options-btn">
+              <view class="reset" bindtap="onReset">
+                重置
+              </view>
+              <view class="confirm" bindtap="onConfirm">
+                确定
+              </view>
+            </view>
+          </van-dropdown-item>
+        </van-dropdown-menu>
+      </view>
+    </view>
+    <view class="filter-type">
+      <view wx:for="{{type}}" data-index="{{index}}" bindtap="changeType" class="{{typeIndex==index?'active':''}}">{{item.title}}</view>
+    </view>
+  </view>
+  <no-data wx:if="{{!list.length}}"></no-data>
+  <view class="goods-list">
+    <view class="goods-item" wx:for="{{list}}" data-id="{{item.sku_id}}" bindtap="toGoodsDetail">
+      <image src="{{url+item.sku_image}}" class="goods-image"></image>
+      <view class="goods-title-search">
+        <view class="goods-type dc">{{item.goods_type == 1 ? '多采' : item.goods_type == 2 ? '优选' : '京东'}}</view>
+        <view class="title">{{item.goods_name}}
+          <!-- <text>得力</text> -->
+          <!-- <text>{{item.goods_name}}</text> -->
+        </view>
+      </view>
+
+      <view class="goods-desprice">{{item.introduction}}</view>
+
+      <view class="price">
+        <view class="cur-unit">¥</view>
+        <view class="cur-price">{{item.price}}</view>
+        <view class="ori-price">¥{{item.market_price}}</view>
+        <image src="/images/add.png"></image>
+      </view>
+    </view>
+
+  </view>
+</view>

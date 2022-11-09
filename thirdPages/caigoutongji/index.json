@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText":"采购统计",
+  "usingComponents": {
+    "ec-canvas": "../ec-canvas/ec-canvas",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index"
+  }
+}

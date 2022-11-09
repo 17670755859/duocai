@@ -1,0 +1,13 @@
+<!--执行撤销操作弹窗-->
+
+
+<van-action-sheet show="{{ showBox }}" title="采购确认" bind:close="toClose">
+  <view class="cx-box">
+
+    <textarea placeholder="请输入驳回理由" bindinput="inputBlur" data-name="remark" value="{{remark}}" style="background: #F7F8FA;border-radius: 24rpx;padding:26rpx 24rpx;width:94%;margin: 0 auto;box-sizing: border-box;font-size: 30rpx;color: #333;"></textarea>
+    <view class="options-btn {{isIPhoneX?'iphoneXPadding':''}}">
+      <view class="cancel" bindtap="toClose">取消</view>
+      <view class="confirm" bindtap="confirm">确认</view>
+    </view>
+  </view>
+</van-action-sheet>

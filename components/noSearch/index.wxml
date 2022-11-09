@@ -1,0 +1,8 @@
+<!--components/noData/index.wxml-->
+<view>
+  <view></view>
+  <view class="noData-content">
+    <image class="img" src="/images/noSearch.png"></image>
+    <text class="title">暂无记录~</text>
+  </view>
+</view>

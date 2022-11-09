@@ -1,0 +1,12 @@
+{
+
+  "navigationBarTitleText":"采购申请",
+
+  "usingComponents": {
+    "tabbar": "/cutom_tab_bar/tabbar",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "List":"./modules/list/index",
+    "daiShenhe":"./modules/daishenhe/index"
+  }
+}

@@ -1,0 +1,28 @@
+<view class="container">
+  <van-search value="{{ keyword }}" placeholder="请输入搜索关键词" />
+
+
+                <view class="product-item product-item-margin" wx:for="{{3}}">
+                <image src="/images/goods.png" class="product-item-image"></image>
+                <view class="product-item-content">
+                    <view class="product-item-title">
+                        <view class="dc">代采</view>
+                        <text class="title">得力(deli)S01中性笔弹头</text>
+                        <text class="num">X1</text>
+                    </view>
+
+                    <view class="desc">中性笔弹头经典办公按压经办…中性笔弹头经典办公按压经办…</view>
+
+                    <view class="save-price">已省¥88.88</view>
+
+                    <view class="price-box">
+                    <view class="cur-price">¥88.88</view>
+                    <view class="ori-price">¥9.88</view>
+
+                 
+                    </view>
+                    
+                </view>
+                </view>
+
+              </view>

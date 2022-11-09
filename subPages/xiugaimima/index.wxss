@@ -1,0 +1,79 @@
+/* subPages/xiugaimima/index.wxss */
+
+page{
+    background: #F7F8FA;
+  }
+  .commen-view{
+    background: #ffffff;
+    border-radius: 24rpx;
+    padding: 32rpx 24rpx ;
+    margin: 0 auto 24rpx;
+    width: 94%;
+    box-sizing: border-box;
+    margin: 24rpx auto;
+   }
+  .commen-view-item{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 64rpx;
+  }
+  .commen-view-item>.text1{
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  .commen-view-item>.text2{
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #333333;
+    margin-top: 24rpx;
+  }
+
+  .login-item{
+    display: flex;
+    flex-direction: column;
+   
+    margin-bottom: 64rpx;
+}
+.login-item>text{
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #333333;
+}
+.login-item>.login-item-input{
+    display: flex;
+    flex-direction: row;
+    margin-top: 24rpx;
+    /* border-bottom: 1rpx solid #EEEEEE; */
+}
+.login-item-input>input{
+    flex: 1;
+    
+    font-size: 30rpx;
+    color: #333333;
+    padding-bottom: 24rpx;
+}
+.login-item-input>image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.options-group{
+    display: flex;
+    flex-direction: row;
+}
+.options-group>view{
+    flex: 1;height: 88rpx;
+    border-radius: 44rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+.cancel{
+    background: #F3F7FE;
+    color: #2362ED;
+}
+.confirm{
+    background: linear-gradient(312deg, #2362ED 0%, #6191FD 100%);
+    color: #ffffff;
+    margin-left: 24rpx;
+}

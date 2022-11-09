@@ -1,0 +1,12 @@
+var filters = {
+  toFix: function(value) {
+    return parseFloat(value.toFixed(2))
+  },
+  include: function(perission, id) {
+    return perission.indexOf(id) !== -1
+  },
+}
+module.exports = {
+  toFix: filters.toFix,
+  include: filters.include
+}

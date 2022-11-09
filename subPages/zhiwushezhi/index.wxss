@@ -1,0 +1,62 @@
+page{
+    background: #F7F8FA;
+  }
+
+  .container{
+      padding-top: 24rpx;
+  }
+
+  .commen-view{
+      width: 94%;
+      margin: 0 auto 24rpx;
+      background-color: #ffffff;
+      border-radius: 24rpx;
+      padding: 24rpx;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
+  .szt{
+    width: 8rpx;
+    height: 32rpx;
+    background: #6191FD;
+  }
+  .zw{
+      flex: 1;
+      margin-left: 12rpx;
+      font-size: 30rpx;
+font-weight: 500;
+color: #333333;
+  }
+  .options{
+      display: flex;
+      flex-direction: row;
+      margin-left: 24rpx;
+  }
+  .options>view{
+    min-width: 132rpx;
+    height: 64rpx;
+    border-radius: 35rpx ;
+   
+    border: 1px solid rgba(153,153,153,0.62);
+
+    text-align: center;
+    line-height: 64rpx;
+    color: #333333;
+  }
+  .shanchu{
+      margin-left: 8rpx;
+  }
+
+  .confirm{
+      width: 94%;
+      margin: 48rpx auto;
+      height: 88rpx;
+background: linear-gradient(312deg, #2362ED 0%, #6191FD 100%);
+border-radius: 44rpx ;
+text-align: center;
+font-size: 30rpx;
+line-height: 88rpx;
+color: #ffffff;
+  }

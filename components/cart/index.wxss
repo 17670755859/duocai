@@ -1,0 +1,267 @@
+@import '../../app.wxss';
+@import '../../commen/form.wxss';
+
+page{
+  background: #f7f7f7;
+}
+.divider {
+  width: 100%;
+  height: 24rpx;
+  background: #f7f7f7;
+}
+
+.cart {
+  padding-bottom: 220rpx;
+  /* border: 1px solid red; */
+}
+
+.cart-commen {
+  width: 100%;
+  background: #Fff;
+}
+
+.cart-title {
+  display: flex;
+  flex-direction: row;
+  width: 94%;
+  margin: 0 auto;
+  align-items: center;
+  padding: 40rpx 0 0;
+}
+
+.cart-title>image {
+  width: 40rpx;
+  height: 40rpx;
+margin-right: 24rpx;
+}
+
+.cart-title>text {
+  font-size: 30rpx;
+  color: #333333;
+  
+}
+
+.shop-name {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 12rpx;
+  background-position: center;
+  background-size: cover;
+}
+
+.item-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 40rpx auto 0;
+  width: 94%;
+  padding-bottom: 24rpx;
+}
+
+.shop-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16rpx;
+  align-items: flex-start;
+  height: 220rpx;
+  flex: 1;
+}
+
+.shop-box>.name {
+  font-size: 30rpx;
+
+  color: #333333;
+}
+
+.shop-box>.type {
+  margin-top: 14rpx;
+  flex: 1;
+}
+
+.shop-box >.type>.buxiangou {
+  font-size: 28rpx;
+
+  color: #999999;
+}
+
+.shop-box >.type>.price {
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 24rpx;
+}
+
+.price-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.price-box>.tips {
+  font-size: 26rpx;
+
+  color: rgba(51, 51, 51, 1);
+}
+
+.price-box>.unit {
+  color: rgba(255, 98, 0, 1);
+  font-size: 26rpx;
+
+}
+
+.price-box>.price {
+  font-size: 36rpx;
+
+  color: #FF6200;
+  flex: 1;
+}
+
+
+.recommend{
+  margin: 13rpx 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.recommend-item{
+  /* flex: 1; */
+  width:342rpx;
+  height: 522rpx;
+background: rgba(255, 255, 255, 0.39);
+box-shadow: 0px 5rpx 20rpx rgba(0, 0, 0, 0.05);
+border-radius: 24rpx;
+margin-bottom: 24rpx;
+overflow: hidden;
+}
+.recommend-item:nth-child(2n){
+  margin-left: 18rpx;
+}
+.recommend-commodity-image{
+  width: 342rpx;
+  height: 342rpx;
+  background-position: center;
+  background-size: cover;
+
+}
+.recommend-commodity-info{
+  display: flex;
+  flex-direction: row;
+  margin: 16rpx;
+}
+.recommend-commodity-info-image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.recommend-commodity-info-box{
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rpx;
+flex: 1;
+}
+.recommend-commodity-info-box>.name{
+  color: #333333;
+  font-size: 26rpx;
+}
+
+
+.recommend-commodity-info-box>.xiangou{
+  font-size: 24rpx;
+
+  color: #999999;
+  margin-top: 8rpx;
+}
+.recommend-commodity-info-box>.price-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.recommend-commodity-info-box>.price-box>view{
+  flex: 1;
+}
+.recommend-commodity-info-box>.price-box .unit{
+  font-size: 24rpx;
+
+color: #FF6200;
+}
+.recommend-commodity-info-box>.price-box .price{
+  font-size: 32rpx;
+
+color: #FF6200;
+}
+
+.recommend-commodity-info-box>.price-box .specif{
+  font-size: 24rpx;
+
+  color: #999999;
+  flex: 1;
+}
+.recommend-commodity-info-box>.price-box .add-image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.bottom{
+  position: fixed;
+  width: 100%;
+  /* bottom: 200rpx; */
+  left: 0;
+  height: 108rpx;
+/* background: rgba(255, 255, 255, 0.39); */
+background: #fff;
+box-shadow: 0px -10rpx 20rpx rgba(0, 0, 0, 0.05);
+display: flex;
+flex-direction: row;
+align-items: center;
+z-index: 2;
+}
+
+.bottom .qx{
+  font-size: 26rpx;
+  color: #333333;
+}
+.bottom .hj{
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 32rpx;
+}
+.bottom .unit{
+  font-size: 26rpx;
+
+color: #FF6200;
+}
+.bottom .price{
+  font-size: 50rpx;
+
+color: #FF6200;
+flex:1
+}
+.bottom >view{
+  width: 224rpx;
+height: 76rpx;
+background: rgba(7, 193, 96, 1);
+border-radius: 44rpx;
+text-align: center;
+line-height: 76rpx;
+color: #Fff;
+font-size: 32rpx;
+margin-right: 24rpx;
+}
+
+.ziti-address{
+  flex:1;
+  display: flex;
+  flex-direction: row;
+}
+.ziti-address text{
+  font-size: 26rpx;
+  color: #333333;
+}
+.ziti-address>view{
+  display: flex;
+  flex-direction: column;
+  flex:
+  1
+}
+.ziti-address>view>text{
+  margin-bottom: 4rpx;
+}

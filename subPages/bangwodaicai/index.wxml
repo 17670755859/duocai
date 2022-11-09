@@ -1,0 +1,57 @@
+<!-- 帮我代采 -->
+
+<view class="container">
+  <view class="wode-back">
+    <image src="/images/wode-back.png"></image>
+
+    <view class="introduce">
+
+      <text>没有找到适合的商品或您有新的需求</text>
+      <text>请把您的采购需求和反馈信息告诉我们,多采会为您提供专业代采服务,协助您快速准确获得最佳采购策略</text>
+
+    </view>
+  </view>
+
+
+
+  <view class="commen-box">
+    <view class="commen-view">
+      <text>需求描述</text>
+      <textarea cols="30" rows="10" data-name="desc" bindinput="inputBlur" value="{{desc}}" placeholder="需求类型 在什么样的场景、怎样去使用"></textarea>
+    </view>
+
+    <view class="commen-view">
+      <text>需求量</text>
+      <input type="number" value="{{need_num}}" data-name="need_num" bindinput="inputBlur" placeholder="请输入每次采购数量或用量" />
+    </view>
+
+    <view class="commen-view">
+      <text>预估金额</text>
+      <input type="number" value="{{estimate_money}}" data-name="estimate_money" bindinput="inputBlur" placeholder="请输入预估年采购金额" />
+    </view>
+
+    <view class="commen-view">
+      <text>补充信息</text>
+
+      <view class="bcxx">
+        <textarea cols="30" rows="10" value="{{remark}}" data-name="remark" bindinput="inputBlur" placeholder="请输入其他您想要补充的"></textarea>
+        <view class='media-list-image'>
+          <view class='add-image' bindtap='chooseImage'>
+            <image src="/images/add1.png"></image>
+          </view>
+          <view class='media-image' wx:if="{{image}}">
+
+            <image src='{{image}}' mode="aspectFill" bindtap='previewImage' class="image"></image>
+
+            <image src='/images/release/close.png' class='close' catchtap='deleteLandImage' data-index="{{index}}"></image>
+
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class="confirm" bindtap="submitHandler">提交</view>
+</view>

@@ -1,0 +1,23 @@
+<!-- 我的 -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+  <view class="wode-back">
+    <image src="/images/wode-back.png"></image>
+
+    <view class="no-login-tips">
+     <text class="no-login-tips-text1">您好，欢迎使用多采</text>
+     <text class="no-login-tips-text2">请按以下引导进行操作</text>
+   
+
+    </view>
+
+ 
+  </view>
+
+  <view class="process-box">
+    <view class="process-box-view sqsydc" bindtap="toQiyerenzheng">申请使用多采</view>
+    <view class="process-box-view yyzh" bindtap="toLogin">已有账号,立即登录</view>
+    <text class="sqtyzh" bindtap="toShenqingtiyan">申请体验账号</text>
+    </view>
+
+</view>

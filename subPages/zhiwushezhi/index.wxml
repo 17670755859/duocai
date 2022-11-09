@@ -1,0 +1,25 @@
+<!--职务设置-->
+<view class="container">
+  <view class="commen-view" wx:for="{{list}}">
+    <view class="szt"></view>
+    <text class="zw">{{item.name}}</text>
+
+    <view class="options">
+      <!-- <view class="xiugai">修改</view> -->
+      <view class="shanchu" data-id="{{item.job_id}}" bindtap="deleteHandler">删除</view>
+    </view>
+  </view>
+
+  <view class="commen-view">
+    <view class="szt"></view>
+    <input type="text" data-name="jobName" bindinput="inputBlur" value="{{jobName}}" placeholder="请输入职务名称" style="flex: 1;font-size: 30rpx;color: #333;margin-left: 12rpx;" />
+
+    <view class="options">
+      <!-- <view class="shanchu">删除</view> -->
+    </view>
+  </view>
+
+</view>
+
+
+<view class="confirm" bindtap="addHandler">新增</view>

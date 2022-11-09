@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "待审批",
+  "usingComponents": {
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "bohui":"./modules/bohui/index",
+    "no-search": "/components/noSearch/index"
+  }
+}

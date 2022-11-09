@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "chexiao":"/components/chexiao/index",
+    "no-search": "/components/noSearch/index"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText":"订单列表",
+  "usingComponents": {
+    "tabbar": "/cutom_tab_bar/tabbar",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "List":"./modules/list/index"
+  }
+}

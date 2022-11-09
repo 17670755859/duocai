@@ -1,0 +1,54 @@
+/* subPages/shezhi/index.wxss */
+page{
+  background: #F7F8FA;
+}
+.background {
+  width: 100%;
+    height: 140rpx;
+    background: #2968ed;
+    border-radius: 0 0 32rpx 32rpx;
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+}
+.commen-box{
+  width: 94%;
+  margin: 20rpx auto 0;
+}
+.commen-view{
+  width: 100%;
+  background: #fff;
+  border-radius: 24rpx;
+  margin-bottom: 24rpx;
+  padding: 32rpx 24rpx 1rpx;
+  box-sizing: border-box;
+}
+.commen-view-item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40rpx;
+
+}
+.text1{
+  font-size: 30rpx;
+font-weight: 400;
+color: #333333;
+}
+.text2{
+  font-size: 30rpx;
+font-weight: 400;
+color: #333333;
+margin-left: 32rpx;
+}
+.text3{
+  flex: 1;
+}
+.yrz{
+  width: 104rpx;
+  height: 46rpx;
+}
+.right{
+  width: 40rpx;
+  height: 40rpx;
+}

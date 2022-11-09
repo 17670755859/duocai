@@ -1,0 +1,54 @@
+<!-- 我的收藏 -->
+<!-- <view class="item {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{dataList}}" wx:key="item.id">
+            <view class="item-left" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove">
+                <view class="icon-check">
+                    <image src="{{noCheck}}"></image>
+                </view>
+                <view class="imgs">
+                    <image src="{{item.img}}"></image>
+                </view>
+                <view class="context">
+                    <view class="title">{{item.title}}</view>
+                    <view class="bottoms">
+                        <view class="price">￥{{item.price}}</view>
+                        <view class="num">
+                            <view class="opare">-</view>
+                            <view class="opare nums">{{item.num}}</view>
+                            <view class="opare">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="delete" data-id="{{item.id}}" bindtap="delItem">删除</view>
+        </view> -->
+
+
+
+<view class="container">
+  <no-data wx:if="{{!dataList.length}}"></no-data>
+  <view class="product-item product-item-margin {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{dataList}}">
+    <view class="item-left" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove">
+      <image src="{{url+item.goods_image}}" class="product-item-image"></image>
+      <view class="product-item-content">
+        <view class="product-item-title">
+          <view class="dc">代采</view>
+          <text class="title">{{item.sku_name}}</text>
+          <text class="num">X1</text>
+        </view>
+
+        <view class="desc">中性笔弹头经典办公按压经办…中性笔弹头经典办公按压经办…</view>
+
+        <view class="save-price">已省¥{{88.88}}</view>
+
+        <view class="price-box">
+          <view class="cur-price">¥{{item.price}}</view>
+          <view class="ori-price">¥{{item.market_price}}</view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class="delete" data-id="{{item.goods_id}}" bindtap="delItem">删除</view>
+  </view>
+
+</view>

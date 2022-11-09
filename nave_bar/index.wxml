@@ -1,0 +1,8 @@
+<view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+
+  <view class='nav-capsule' style='height: {{statusbarH*2 + 44}}px;'wx:if="{{showBack}}" bindtap="naviBack">
+    <image src="/images/left.png"  class="nav-left"></image>
+  </view>
+  
+    <view class='nav-title' style='line-height: {{statusbarH*2 + 44}}px;'>{{title}}</view>
+  </view>

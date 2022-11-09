@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarBackgroundColor": "#E54338",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "tabbar": "/cutom_tab_bar/tabbar",
+    "van-search": "@vant/weapp/search/index"
+  }
+}

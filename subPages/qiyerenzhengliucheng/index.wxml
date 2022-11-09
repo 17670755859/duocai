@@ -1,0 +1,71 @@
+<!-- 企业认证流程 -->
+<view class="container">
+    <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+        <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;margin-right:{{jiaonang}}rpx'>
+            <!-- <view class="nav-back" bindtap="navigateBack">
+        <image src="/images/back2.png"></image>
+      </view> -->
+            <image src="/images/back2.png" class="login-nav-back" bindtap="navigateBack"></image>
+            <text class="nav-name">多采</text>
+        </view>
+    </view>
+    <image src="/images/login-back.png" class="login-back"></image>
+    <view class="login-tips">
+        <text>企业认证流程</text>
+    </view>
+    <view class="login-box">
+        <view class="auth-steps">
+            <text class="auth-num">01</text>
+            <view class="auth-line">
+                <view class="circle"></view>
+                <view class="line"></view>
+            </view>
+            <view class="auth-info">
+                <text class=""> 企业资质认证</text>
+                   
+                
+                <text>提交材料，完成企业实名认证 </text>
+                    
+               
+
+
+            </view>
+        </view>
+        <view class="auth-steps">
+            <text class="auth-num">02</text>
+            <view class="auth-line">
+                <view class="circle"></view>
+                <view class="line line2"></view>
+            </view>
+            <view class="auth-info">
+                <text> 签署合同 </text>
+                   
+               
+                <text> 签订《会员代采服务协议》 《商品销售协议》 </text>
+                   
+               
+
+
+            </view>
+        </view>
+
+        <view class="auth-steps">
+            <text class="auth-num">02</text>
+            <view class="auth-line">
+                <view class="circle"></view>
+                <view class="line"></view>
+            </view>
+            <view class="auth-info">
+                <text class=""> 开通会员账户 </text>
+                   
+               
+                <text> 完成签约，立即开始体验会员服务 </text>
+                   
+               
+
+
+            </view>
+        </view>
+        <view class="confirm" bindtap="toRenzheng">立即认证</view>
+    </view>
+</view>

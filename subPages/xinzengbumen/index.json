@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"新增部门",
+  "usingComponents": {
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
+  }
+}

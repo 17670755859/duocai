@@ -1,0 +1,8 @@
+<!--components/noData/index.wxml-->
+<view>
+  <view></view>
+  <view class="noData-content">
+    <image class="img" src="/images/noData.png"></image>
+    <text class="title">空空如也~</text>
+  </view>
+</view>

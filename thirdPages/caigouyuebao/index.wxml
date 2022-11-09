@@ -1,0 +1,181 @@
+<!--采购月报-->
+<view class="container">
+
+  <view class="timer" bindtap="chooseTimer">
+    <text>{{date}}</text>
+    <image src="/images/sjx-down2.png"></image>
+  </view>
+
+  <view class="price">
+    <view class="price-box">
+      <view class="title">
+        <view></view>
+        <text>采购总金额(元)</text>
+      </view>
+      <text>{{sumMoney}}</text>
+    </view>
+    <view class="price-box">
+      <view class="title">
+        <view></view>
+        <text>数量(件)</text>
+      </view>
+      <text>{{num}}</text>
+    </view>
+  </view>
+
+  <view class="circle-canvas">
+
+    <ec-canvas ec="{{ec}}" canvas-id="assetsCancvas" id="assetsCancvas"></ec-canvas>
+
+    <view class="circel-legend">
+      <view class="circel-legend-item">
+        <view class="circle dc"></view>
+        <view class="circle-text">
+          <text>代采 ￥{{sumDaiMoney}}</text>
+          <text>环比 +{{cai_huanbi_add}}</text>
+        </view>
+      </view>
+
+
+      <view class="circel-legend-item">
+        <view class="circle yx"></view>
+        <view class="circle-text">
+          <text>优选 ￥{{sumYouMoney}}</text>
+          <text>环比 +{{you_huanbi_add}}</text>
+        </view>
+      </view>
+
+      <view class="circel-legend-item">
+        <view class="circle jd"></view>
+        <view class="circle-text">
+          <text>京东 ￥{{sumJdMoney}}</text>
+          <text>环比 +{{jd_huanbi_add}}</text>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class="next-box next-box-padding">
+    <view class="divider"></view>
+
+
+    <view class="price">
+      <view class="price-box price-box-dc">
+        <view class="title">
+          <view></view>
+          <text>代采总金额(元)</text>
+        </view>
+        <text>{{sumDaiMoney}}</text>
+      </view>
+      <view class="price-box price-box-dc">
+        <view class="title">
+          <view></view>
+          <text>代采已省金额(元)</text>
+        </view>
+        <text>{{sumJian}}</text>
+      </view>
+    </view>
+
+    <view class="price-box-list">
+      <view class="price-box-item">
+        <text>{{sumServerMoney}}</text>
+        <view>
+          <image src="/images/fu.png"></image>
+          <text>服务费</text>
+        </view>
+      </view>
+      <view class="price-box-item">
+        <text>{{sumStoreMoney}}</text>
+        <view>
+          <image src="/images/chu.png"></image>
+          <text>仓储费</text>
+        </view>
+      </view>
+
+      <view class="price-box-item">
+        <text>{{sumSortingMoney}}</text>
+        <view>
+          <image src="/images/jian.png"></image>
+          <text>分拣费</text>
+        </view>
+      </view>
+
+      <view class="price-box-item">
+        <text>{{sumCMoney}}</text>
+        <view>
+          <image src="/images/yun.png"></image>
+          <text>运费</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <view class="next-box next-box-1">
+    <view class="divider"></view>
+
+    <view class="commen-view-title">
+      <view></view>
+      <text>采购趋势图</text>
+    </view>
+
+    <view class="line-echart">
+      <ec-canvas id="mychart-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+    </view>
+
+  </view>
+
+  <view class="next-box next-box-2">
+    <view class="divider"></view>
+
+    <view class="commen-view-title">
+      <view></view>
+      <text>采购分类</text>
+    </view>
+
+    <view class="progress-box">
+      <view wx:for="{{cateSum}}">
+        <view class="process-box-image process-box-image-margin">
+          <image src="/images/wjbg.png"></image>
+          <text class="text1">{{item.category_name}}</text>
+          <text class="text2">数量:{{item.sumNum}}</text>
+          <text class="text3">￥{{item.sumMoney}}</text>
+        </view>
+        <van-progress percentage="{{item.sumNum}}" show-pivot="{{false}}" pivot-text="" pivot-color="#7232dd" track-color="#F3F7FE" color="linear-gradient(270deg, #2362ED 0%, #6191FD 100%)" stroke-width="8px" />
+      </view>
+
+    </view>
+  </view>
+
+
+
+  <view class="next-box next-box-3">
+    <view class="divider"></view>
+
+    <view class="commen-view-title">
+      <view></view>
+      <text>人员采购统计</text>
+    </view>
+
+    <view class="progress-box">
+      <view wx:for="{{peopleSum}}">
+        <view class="process-box-image process-box-image-margin">
+          <text class="text1">{{item.realname}}</text>
+          <text class="text2">数量:{{item.sumNum}}</text>
+          <text class="text3">￥{{item.sumMoney}}</text>
+        </view>
+        <van-progress percentage="{{item.sumNum}}" show-pivot="{{false}}" pivot-text="" pivot-color="#7232dd" track-color="#F3F7FE" color="linear-gradient(270deg, #2362ED 0%, #6191FD 100%)" stroke-width="8px" />
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<!-- 时间选择 -->
+<van-action-sheet show="{{ show }}">
+  <van-datetime-picker type="year-month" value="{{ currentDate }}" max-date="{{ maxDate }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+</van-action-sheet>

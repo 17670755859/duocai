@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#2968ed",
+    "navigationBarTitleText": "采购详情",
+    "navigationBarTextStyle":"white",
+    "usingComponents": {
+        "chexiao":"/components/chexiao/index",
+        "van-dialog": "@vant/weapp/dialog/index"
+    }
+}

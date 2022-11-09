@@ -1,0 +1,23 @@
+<!-- 搜索 -->
+<view class="search">
+  <van-search value="{{ keyword }}" focus="{{true}}" data-name="keyword" placeholder="{{keyword}}" bind:search="searchHandler" shape="round" bind:change="inputBlur" use-action-slot>
+    <view slot="action" bind:tap="onClick" class="search-btn">搜索</view>
+  </van-search>
+
+  <view class="del-box">
+    <text>当前/历史</text>
+    <image src="/images/delete.png"></image>
+  </view>
+
+  <view class="list">
+    <view wx:for="{{historyKey}}" data-title="{{item}}" bindtap="toGoodsList"> {{item}}</view>
+  </view>
+
+  <view class="del-box">
+    <text>热门搜索</text>
+  </view>
+  <view class="list">
+    <view wx:for="{{hotWord}}" data-title="{{item}}" bindtap="toGoodsList"> {{item}}</view>
+  </view>
+
+</view>

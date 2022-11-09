@@ -1,0 +1,55 @@
+<view class="tabbar {{isIPhoneX?'iphoneXPadding':''}}">
+  <view class="tabbar-box">
+  
+    <block wx:for='{{tabbarList}}' wx:key="index">
+      <view class='tabbar-item {{activeIdx === index ? "active" : ""}}' bindtap='handleItemTap' data-path='{{item.pagePath}}' data-idx='{{index}}' wx:if="{{index!=2}}">
+        <view class='tabbar-item-icon'>
+          <image src='{{activeIdx === index ? item.selectedIconPath : item.iconPath}}' ></image>
+         
+          <!-- <view class="num" wx:if="{{activeIdx==2&&carNum}}">{{carNum}}</view> -->
+        </view>
+        <view class='tabbar-item-text {{activeIdx === index ? "active" : ""}}'>{{item.text}}</view>
+      </view>
+
+      <view wx:if="{{index==2}}" class='tabbar-item {{activeIdx === index ? "active" : ""}}' bindtap='handleItemTap' data-path='{{item.pagePath}}' data-idx='{{index}}'>
+        <view class='tabbar-item-icon'>
+          <image src='{{activeIdx === index ? item.selectedIconPath : item.iconPath}}' ></image>
+         
+          <view class="num" wx:if="{{carNum}}">{{carNum}}</view>
+        </view>
+        <view class='tabbar-item-text {{activeIdx === index ? "active" : ""}}'>{{item.text}}</view>
+      </view>
+    
+    
+    </block>
+  </view>
+</view>
+
+
+<!-- <van-tabbar active="{{ activeIdx }}" bind:change="onChange" border="{{false}}" active-color="#07C160" inactive-color="#999999" class="tabbar">
+  <van-tabbar-item >
+    <image slot="icon" src="/images/shouye.png" mode="aspectFit" class="bar-image" />
+    <image slot="icon-active" src="/images/shouyexuanzhong.png" mode="aspectFit" class="bar-image" />
+    首页
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <image slot="icon" src="/images/cart.png" mode="aspectFit" class="bar-image" />
+    <image slot="icon-active" src="/images/cartxuanzhong.png" mode="aspectFit" class="bar-image" />
+    购物车
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <image slot="icon" src="/images/release1.png" mode="aspectFit" class="release-image" />
+  </van-tabbar-item>
+
+  <van-tabbar-item>
+    <image slot="icon" src="/images/order.png" mode="aspectFit" class="bar-image" />
+    <image slot="icon-active" src="/images/orderxuanzhong.png" mode="aspectFit" class="bar-image" />
+    订单
+  </van-tabbar-item>
+
+  <van-tabbar-item>
+    <image slot="icon" src="/images/wode.png" mode="aspectFit" class="bar-image" />
+    <image slot="icon-active" src="/images/wodexuanzhong.png" mode="aspectFit" class="bar-image" />
+    我的
+  </van-tabbar-item>
+</van-tabbar> -->

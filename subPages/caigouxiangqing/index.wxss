@@ -1,0 +1,12 @@
+@import "/commen/caigou.wxss";
+.container{
+    padding-bottom: 40rpx;
+}
+/* .cg-box {
+    width: 94%;
+
+  } */
+  .nav-wrap{
+    /* background: #6191FD; */
+    background: rgba(35,98,237,1);
+  }

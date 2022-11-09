@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"子部门设置",
+  "usingComponents": {
+    "no-data": "/components/noData/index"
+  }
+}

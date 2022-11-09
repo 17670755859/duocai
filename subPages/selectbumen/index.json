@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"选择上级部门",
+  "usingComponents": {
+    "van-tree-select": "@vant/weapp/tree-select/index"
+  }
+}

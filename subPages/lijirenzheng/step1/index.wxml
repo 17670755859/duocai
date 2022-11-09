@@ -1,0 +1,104 @@
+<step step="{{1}}"></step>
+<view class="commen-view" >
+  <view class="commen-view-title">
+    <view></view>
+    <text>企业资质认证</text>
+  </view>
+  <view class="commen-view-items">
+    <text class="commen-view-item-label">幼儿园名称</text>
+    <view class="commen-view-items-input">
+      <input type="text" bindinput="inputBlur" data-name="company_name" value="{{company_name}}" placeholder="请输入营业执照名称,作为签约主体" />
+    </view>
+  </view>
+  <view class="commen-view-items">
+    <text class="commen-view-item-label">幼儿园常用名</text>
+    <view class="commen-view-items-input">
+      <input type="text" bindinput="inputBlur" data-name="company_nickname" value="{{company_nickname}}" placeholder="作为用户品,不可更改" />
+    </view>
+  </view>
+  <view class="commen-view-items">
+    <text class="commen-view-item-label">办学地址</text>
+    <!-- <view class="commen-view-items-input">
+      <input type="text" placeholder="请选择地区" />
+      <image src="/images/right.png" class="right"></image>
+    </view> -->
+    <picker class="picker" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range-key="name" range="{{multiArray}}">
+      <view class="commen-view-items-input">
+        <view class="picker-value">
+          <!-- <text>{{multiArray[0][multiIndex[0]].name}}，{{multiArray[1][multiIndex[1]].name}}，{{multiArray[2][multiIndex[2]].name}}</text> -->
+          <input wx:if="{{!province}}" type="text" placeholder="请选择地址" disabled="true"/>
+          <text wx:else>{{province}}，{{city}}，{{district}}</text>
+        </view>
+        <image src="/images/right.png" class="right"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="commen-view-items">
+    <text class="commen-view-item-label">详细地址</text>
+    <view class="commen-view-items-input">
+      <input type="text" bindinput="inputBlur" data-name="address" value="{{address}}" placeholder="请输入详细地址" />
+    </view>
+  </view>
+
+  <view class="commen-view-items commen-view-items-input-no">
+    <text class="commen-view-item-label">办学性质</text>
+    <view class="commen-view-items-input ">
+
+      <van-radio-group value="{{ nature }}" bind:change="onRadioChange">
+        <view class="radio-group">
+          <van-radio name="1"> <text style="margin-right:20rpx">民办非普惠</text> </van-radio>
+          <van-radio name="2"><text style="margin-right:20rpx">民办普惠</text></van-radio>
+          <van-radio name="3"><text style="margin-right:20rpx">公办普惠</text></van-radio>
+        </view>
+
+      </van-radio-group>
+    </view>
+  </view>
+</view>
+
+
+<view class="commen-view" hover-class="none" hover-stop-propagation="false">
+  <view class="commen-view-title">
+    <view></view>
+    <text>营业执照</text>
+  </view>
+
+  <view class="commen-view-image" data-name="bus" bindtap="chooseImage">
+    <image src="{{bus?bus:'/images/yyzz.png'}}" mode="aspectFill"></image>
+  </view>
+</view>
+
+
+<view class="commen-view" hover-class="none" hover-stop-propagation="false">
+  <view class="commen-view-title">
+    <view></view>
+    <text>办学许可证</text>
+  </view>
+
+  <view class="commen-view-image" data-name="permission" bindtap="chooseImage">
+    <image src="{{permission?permission:'/images/bxxkz.png'}}" mode="aspectFill"></image>
+  </view>
+</view>
+
+
+<view class="commen-view" hover-class="none" hover-stop-propagation="false">
+  <view class="commen-view-title">
+    <view></view>
+    <text>法人身份证</text>
+  </view>
+  <view class="commen-view-image-box">
+    <view class="commen-view-image" data-name="people_id_posi" bindtap="chooseImage">
+      <image src="{{people_id_posi?people_id_posi:'/images/zhengmian.png'}}" mode="aspectFill"></image>
+    </view>
+    <view class="commen-view-image" data-name="people_id_nega" bindtap="chooseImage">
+      <image src="{{people_id_nega?people_id_nega:'/images/beimian.png'}}" mode="aspectFill"></image>
+    </view>
+  </view>
+
+
+
+
+</view>
+
+<view class="confirm" bindtap="toNext">下一步</view>
+<view class="fuwurexian">服务热线:453-5464-561 8:00-18:00</view>

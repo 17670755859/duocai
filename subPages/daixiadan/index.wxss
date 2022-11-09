@@ -1,0 +1,22 @@
+@import "/commen/orderList.wxss";
+
+.option>.yx1{
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #333333;
+ }
+ .option>.price{
+     flex: 1;
+ }
+
+ .image-list{
+   /* width: 50%; */
+  height:124rpx;margin-top:64rpx;white-space: nowrap;
+  /* border: 1px solid red; */
+ }
+ .image-item{
+   display: inline-block;
+   width: 124rpx;
+   height: 124rpx;
+   border-radius: 24rpx;
+ }

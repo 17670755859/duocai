@@ -1,0 +1,73 @@
+<view class="container">
+  <!-- <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;'>
+      <image src="/images/left1.png" bindtap="naviBack"></image>
+      <text>开票信息</text>
+
+    </view>
+  </view> -->
+  <view class="background"></view>
+
+  <view class="commen-box">
+    <view class="commen-box-title">
+      <view></view>
+      <text>开票信息</text>
+    </view>
+
+    <view class="commen-view-item">
+      <text class="text1">单位名称</text>
+      <text class="text2">{{make_company}}</text>
+
+    </view>
+
+    <view class="commen-view-item">
+      <text class="text1">公司税号</text>
+      <text class="text2">{{make_duty}}</text>
+
+    </view>
+
+
+    <view class="commen-view-item">
+      <text class="text1">地址</text>
+      <text class="text2">{{make_address}}</text>
+
+    </view>
+
+    <view class="commen-view-item">
+      <text class="text1">电话</text>
+      <text class="text2">{{make_phone}}</text>
+
+    </view>
+
+
+    <view class="commen-view-item">
+      <text class="text1">开户行</text>
+      <text class="text2">{{make_bank}}</text>
+
+    </view>
+
+    <view class="commen-view-item">
+      <text class="text1">账号</text>
+      <text class="text2">{{make_number}}</text>
+
+    </view>
+
+    <view class="commen-view-item">
+      <text class="text1">抬头</text>
+      <text class="text2">{{make_title}}</text>
+
+    </view>
+
+
+  </view>
+
+  <view class="confirm" bindtap="xiugai"> 修改</view>
+
+
+
+
+
+
+
+
+</view>

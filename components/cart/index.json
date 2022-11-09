@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "concat-head": "/components/ContactHead/index",
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

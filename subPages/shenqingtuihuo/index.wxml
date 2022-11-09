@@ -1,0 +1,111 @@
+<!-- 申请换货 -->
+
+<view class="container">
+  <view class="commen-view">
+    <view class="commen-view-title">
+      <view></view>
+      <text>订单编号 {{goods.order_no}}</text>
+    </view>
+
+    <view class="goods-item">
+      <text class="goods-item-text1">数量</text>
+      <text class="goods-item-text2">{{goods.num}}件</text>
+    </view>
+
+    <view class="goods-item">
+      <text class="goods-item-text1">总金额</text>
+      <text class="goods-item-text2">¥{{goods.goods_money}}</text>
+    </view>
+
+    <view class="goods-item">
+      <text class="goods-item-text1">下单时间</text>
+      <text class="goods-item-text2">{{goods.time}}</text>
+    </view>
+  </view>
+
+
+  <view class="commen-view commen-view-padding">
+
+    <view class="product-item">
+      <image src="{{url+goods.sku_image}}" class="product-item-image"></image>
+      <view class="product-item-content">
+        <view class="product-item-title">
+          <view class="dc">{{goods.goods_type == 1 ? '多采' : item.goods_type == 2 ? '优选' : '京东'}}</view>
+          <text class="title">{{goods.sku_name}}</text>
+          <text class="num">X{{goods.num}}</text>
+        </view>
+
+        <view class="desc">{{goods.introduction}}</view>
+        <view class="save-price">已省¥{{goods.skuMarketPrice - goods.skuPrice}}</view>
+        <view class="price-box">
+          <view class="cur-price">¥{{goods.skuPrice}}</view>
+          <view class="ori-price">¥{{goods.skuMarketPrice}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="commen-view commen-view-padding">
+
+    <view class="van-cell-item van-cell-item-border">
+      <text class="van-cell-item-text1">可退数量</text>
+      <text class="van-cell-item-text2">{{goods.num}}</text>
+    </view>
+
+
+    <view class="van-cell-item">
+      <text class="van-cell-item-text1">申请退货数量</text>
+      <!-- <text class="van-cell-item-text2">x2</text> -->
+
+      <van-stepper min="1" max="{{goods.num}}" value="{{ number }}" bind:change="setNumber" />
+    </view>
+  </view>
+
+
+  <view class="commen-view">
+    <view class="commen-view-title">
+      <view></view>
+      <text>退货说明 </text>
+    </view>
+
+    <view class="radio-cell">
+      <van-radio-group value="{{ refund_reason }}" bind:change="onChange">
+        <view class="radio-cell-item">
+          <van-radio name="质量问题" icon-size="14px">
+            <text style="font-size: 26rpx;">质量问题</text>
+          </van-radio>
+        </view>
+        <view class="radio-cell-item">
+          <van-radio name="其他" icon-size="14px">
+            <text style="font-size: 26rpx;">其他</text>
+          </van-radio>
+        </view>
+
+      </van-radio-group>
+    </view>
+
+    <view class="input-box">
+
+      <textarea bindinput="inputBlur" data-name="refund_remark" cols="30" rows="10" value="{{refund_remark}}" style="width: 100%;height: 300rpx;padding: 24rpx;box-sizing: border-box;font-size: 30rpx;color: #333;" placeholder="请输入备注"></textarea>
+
+
+      <view class='media-list-image'>
+        <view class='add-image' bindtap='chooseImage' wx:if='{{imgFile.length<20}}' data-type="set">
+          <image src="/images/add1.png"></image>
+        </view>
+        <view class='media-image' wx:for='{{imgFile}}'>
+
+          <image src='{{item}}' mode="aspectFill" bindtap='previewImage' data-url='{{item.url}}' class="image" data-urls="{{imgFile}}"></image>
+
+
+          <image src='/images/close.png' class='close' catchtap='deleteLandImage' data-index="{{index}}"></image>
+
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class="confirm" bindtap="submitHandler">确定</view>
+</view>

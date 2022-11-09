@@ -1,0 +1,45 @@
+<!-- 待审核 -->
+<scroll-view class="list" scroll-y style="height: {{height}}px;" refresher-enabled="{{true}}" refresher-threshold="{{100}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindscrolltolower="bindScrollToLower">
+
+
+    <van-checkbox-group value="{{ result }}" bind:change="onCheckBoxChange">
+        <view class="order-list">
+            <view class="order-item" wx:key="index" wx:for="{{5}}">
+            <van-checkbox name="{{index}}" shape="square"></van-checkbox>
+
+            <view class="order-content">
+                <view class="order-num">
+                    <text class="order-num-text1">NO.2354645645767</text>
+                    <text class="order-num-text2">2022-03-23 12:00</text>
+                    <image src="/images/right1.png"></image>
+
+
+                </view>
+
+                <image src="/images/line.png" class="line"></image>
+
+                <view class="order-avatar">
+                    <image src="/images/header.png" class="avatar"></image>
+                    <view class="order-avatar-name">
+                        <text>安辰 财务(财务室)</text>
+                        <view class="order-avatar-num">
+                            <text>采购数量:30</text>
+                            <text>合计金额：</text>
+                            <text>￥39.99</text>
+                        </view>
+                    </view>
+                </view>
+
+                <scroll-view scroll-x style="height:124rpx;width: 100%;margin-top:64rpx" scroll-left="{{0}}">
+                <image src="/images/header.png" class="image-item" wx:for="{{8}}"></image>
+                </scroll-view>
+            </view>
+
+        </view>
+        </view>
+
+
+     
+    </van-checkbox-group>
+
+</scroll-view>

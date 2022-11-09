@@ -1,0 +1,41 @@
+<!--执行撤销操作弹窗-->
+
+
+<van-action-sheet show="{{ show }}" title="采购确认" bind:close="toClose">
+  <view class="cx-box">
+
+    <view class="goods-box">
+      <view class="product-item ">
+        <image src="/images/goods.png" class="product-item-image"></image>
+        <view class="product-item-content">
+          <view class="product-item-title">
+            <view class="dc">代采</view>
+            <text class="title">得力(deli)S01中性笔弹头</text>
+          </view>
+
+          <view class="desc">中性笔弹头经典办公按压经办…中性笔弹头经典办公按压经办…</view>
+
+          <view class="save-price">已省¥88.88</view>
+
+          <view class="price-box">
+            <view class="cur-price">¥88.88</view>
+            <view class="ori-price">¥9.88</view>
+
+            <view class="price-total">共计</view>
+            <view class="price-unit">￥</view>
+            <view class="price-total-price">88.88</view>
+          </view>
+
+        </view>
+      </view>
+
+
+
+    </view>
+
+    <view class="options-btn {{isIPhoneX?'iphoneXPadding':''}}">
+      <view class="cancel" bindtap="toClose">取消</view>
+      <view class="confirm" bindtap="toClose">确认</view>
+    </view>
+  </view>
+</van-action-sheet>

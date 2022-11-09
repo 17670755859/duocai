@@ -1,0 +1,14 @@
+<van-tabs active="{{ active }}" title-active-color="#2362ED" title-inactive-color="#333333" color="#2362ED" bind:change="onChange">
+  <van-tab title="全部" name="all">
+    <List list="{{list}}" bind:scroll="loadMoreHandler" bind:confirm="confirmReceiving" height="{{height}}" />
+  </van-tab>
+  <van-tab title="待处理" name="1">
+    <List list="{{list}}" bind:scroll="loadMoreHandler" bind:confirm="confirmReceiving" height="{{height}}" />
+  </van-tab>
+  <van-tab title="已处理" name="3">
+    <List list="{{list}}" bind:scroll="loadMoreHandler" bind:confirm="confirmReceiving" height="{{height}}" />
+  </van-tab>
+  <van-tab title="已撤消" name="-2">
+    <List list="{{list}}" bind:scroll="loadMoreHandler" bind:confirm="confirmReceiving" height="{{height}}" />
+  </van-tab>
+</van-tabs>

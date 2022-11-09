@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "对账单",
+  "usingComponents": {
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index"
+  }
+}

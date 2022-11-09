@@ -1,0 +1,26 @@
+@import "/commen/caigou.wxss";
+.container{
+    padding-bottom: 400rpx;
+}
+/* .cg-box {
+    width: 94%;
+    margin: -160rpx auto;
+  } */
+  .ori-price{
+    flex: 1;
+  }
+  .price-confirm, .price-modify
+  {
+    height: 48rpx;
+border-radius: 35rpx ;
+border: 1rpx solid rgba(153, 153, 153, 0.62);
+color: #333333;
+font-size: 26rpx;
+text-align: center;
+line-height: 48rpx;
+padding: 0 26rpx;
+box-sizing: border-box;
+  }
+  .price-modify{
+margin-left: 8rpx;
+  }

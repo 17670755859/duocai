@@ -1,0 +1,99 @@
+<!-- 采购详情 -->
+<!-- <view class="cg-box">
+    <view class="cg-title">
+        <image class="" src="/images/dsh.png"></image>
+        <text>待审核</text>
+    </view>
+</view> -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+  <!-- <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;'>
+      <image src="/images/left1.png" bindtap="naviBack"></image>
+      <text>采购申请</text>
+    </view>
+  </view> -->
+  <view class="background"></view>
+  <view class="cg-box">
+    <view class="detail-box">
+      <view class="order">
+        <view class="order-title">
+          <view></view>
+          <text>{{address.realname}}</text>
+          <text wx:if="{{address.jobName}}">{{address.jobName}}({{address.departmentName}})</text>
+        </view>
+        <view class="order-num" hover-class="none" hover-stop-propagation="false">
+          NO.213416541321 2021.05.06 12:00
+        </view>
+      </view>
+
+      <view class="goods-info">
+        <view class="goods-title">
+          <view></view>
+          <text>商品信息</text>
+        </view>
+
+        <view class="goods-item goods-item-margin">
+          <text>数量</text>
+          <text>{{shop_goods_list.goods_num}}件</text>
+        </view>
+        <view class="goods-item">
+          <text>总金额</text>
+          <text>￥{{shop_goods_list.order_money}}</text>
+        </view>
+        <view class="goods-item">
+          <text>备注</text>
+          <text>请开发票,与商品一起邮寄</text>
+        </view>
+      </view>
+
+      <view class="product-box">
+
+        <view class="goods-title">
+          <view></view>
+          <text>商品列表</text>
+        </view>
+
+        <view class="product-item product-item-margin" wx:for="{{goodList}}">
+          <image src="{{url+item.sku_image}}" class="product-item-image"></image>
+          <view class="product-item-content">
+            <view class="product-item-title">
+              <view class="dc">代采</view>
+              <text class="title">{{item.sku_name}}</text>
+              <text class="num">X{{item.num}}</text>
+            </view>
+
+            <view class="desc">{{item.sku_no}}</view>
+
+            <view class="save-price">已省¥{{filters.toFix(item.market_price - item.price)}}</view>
+
+            <view class="price-box">
+              <view class="cur-price">¥{{item.price}}</view>
+              <view class="ori-price">¥{{item.market_price}}</view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+
+      <view class="remark">
+        <view class="goods-title">
+          <view></view>
+          <text>备注</text>
+        </view>
+
+        <textarea bindinput="inputBlur" data-name="shen_remark" value="{{shen_remark}}" placeholder="请输入备注" style="height: 200px;" class="remark-textarea" />
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class="options-btn {{isIPhoneX?'iphoneXPadding':''}}">
+
+  <text class="text1">共{{shop_goods_list.goods_num}}件,合计</text>
+  <text class="text2">¥</text>
+  <text class="text3">{{shop_goods_list.goods_money}}</text>
+  <text class="text4">已省{{shop_goods_list.sum_jian}}</text>
+  <view class="confirm" bindtap="toXiugai">确定</view>
+</view>

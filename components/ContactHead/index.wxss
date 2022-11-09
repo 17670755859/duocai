@@ -1,0 +1,69 @@
+.lxtz-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 56rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+}
+.lxtz{
+  width: 136rpx;
+  height: 136rpx;
+border-radius: 50%;
+}
+.name{
+  font-size: 32rpx;
+color: #333333;
+margin-top: 16rpx;
+}
+
+.close{
+  width: 56rpx;
+  height: 56rpx;
+  /* position: absolute;
+  right: 20rpx;
+  top: 20rpx; */
+  /* margin-top: 120rpx; */
+  display: block;
+  margin: 50rpx auto 0;
+}
+.call{
+  width: 280rpx;
+height: 64rpx;
+background: #07C160;
+opacity: 1;
+border-radius: 44px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin-top: 24rpx;
+}
+.call>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 28rpx;
+}
+.call>text{
+  font-size: 32rpx;
+color: #FFFFFF;
+}
+
+.qrcode{
+  width: 90%;
+  margin: 40rpx auto 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40rpx;
+align-items: center;
+justify-content: center;}
+.qrcode>image{
+  width: 310rpx;
+height: 310rpx;
+}
+.qrcode>text{
+  font-size: 26rpx;
+color: #999999;
+margin-top: 16rpx;
+}

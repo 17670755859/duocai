@@ -1,0 +1,4 @@
+@import "../shenqinghuanhuo/index.wxss";
+.commen-view-margin{
+    margin-top: 0;
+}

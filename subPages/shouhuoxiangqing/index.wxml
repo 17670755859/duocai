@@ -1,0 +1,219 @@
+<!-- 待下单----确定下单 -->
+
+<view class="container">
+  <view class="commen-view">
+    <view class="shxx">收货信息</view>
+    <image src="/images/line2.png" class="line"></image>
+    <view class="name">{{result.order_name}} {{result.mobile}}</view>
+    <view class="address">{{result.full_address}}</view>
+  </view>
+
+<!-- 多采 -->
+  <view class="commen-view" wx:if="{{order_goods[1]}}">
+    <view class="tags dc">
+      <image src="/images/car1.png"></image>
+      <text>代采</text>
+    </view>
+    <view class="image-list">
+
+      <image class="image-item" src="{{url+item.sku_image}}" wx:if="{{order_goods[1].list.length<=4}}" wx:for="{{order_goods[1].list}}"></image>
+      <view class="total-image" wx:if="{{order_goods[1].list.length>4}}">
+        共{{order_goods[1].list.length}}件
+      </view>
+
+    </view>
+
+
+    <view class="other-tips">
+      <text class="other-tips-text1">商品总额</text>
+      <text class="other-tips-text2">¥{{order_goods[1].cai_cost_money}}</text>
+    </view>
+
+    <view class="other-tips dcjs">
+      <text class="other-tips-text1 dcjs-text">代采节省</text>
+      <text class="other-tips-text2 dcjs-text">¥{{order_goods[1].cai_jiesheng_money}}</text>
+    </view>
+
+    <view class="other-tips">
+      <text class="other-tips-text1">应付总额</text>
+      <text class="other-tips-text2">¥{{order_goods[1].cai_sum_money}}</text>
+    </view>
+
+    <view class="other-price">
+      <image src="/images/fu.png"></image>
+      <text class="other-price-title">服务费</text>
+      <text class="other-price-info">￥{{order_goods[1].sum_server_money}}</text>
+    </view>
+
+    <view class="other-price">
+      <image src="/images/chu.png"></image>
+      <text class="other-price-title">仓储费</text>
+      <text class="other-price-info">￥{{order_goods[1].sum_store_money}}</text>
+    </view>
+
+    <view class="other-price">
+      <image src="/images/jian.png"></image>
+      <text class="other-price-title">分拣费</text>
+      <text class="other-price-info">￥{{order_goods[1].sum_sorting_money}}</text>
+    </view>
+    <view class="divider"></view>
+
+    <view class="dis-mode">
+      <view class="dis-mode-item" wx:if="{{result.cai_type == 1}}">
+        <text class="dis-mode-item-info">多采配送</text>
+        <text class="dis-mode-item-price">￥{{order_goods[1].cai_duocai_money}}</text>
+      </view>
+
+      <view class="dis-mode-item" wx:else>
+        <text class="dis-mode-item-info">快递配送</text>
+        <text class="dis-mode-item-price">￥{{order_goods[1].cai_kuaidi_money}}</text>
+      </view>
+    </view>
+
+    <textarea value="{{remark}}" data-name="remark" bindinput="inputBlur" placeholder="请输入备注" style="padding-top: 26rpx;padding-left: 24rpx;padding-right:24rpx;font-size: 30rpx;color:#333;background: #F7F8FA;border-radius: 24rpx;box-sizing: border-box;display: block;margin-top: 29rpx;width: 94%;margin: 29rpx auto;" />
+
+    <view class="fysm">
+      <text class="fysm-text1">费用说明</text>
+      <image src="/images/wenhao.png"></image>
+      <text class="fysm-text2">小计</text>
+      <text class="fysm-text3">¥{{order_goods[1].cai_xiaoji_money}}</text>
+    </view>
+  </view>
+
+
+
+<!-- 优选 -->
+  <view class="commen-view" wx:if="{{order_goods[2]}}">
+    <view class="tags yx">
+      <image src="/images/youxuan.png"></image>
+      <text>优选</text>
+    </view>
+
+    <view class="image-list">
+
+      <image class="image-item" src="{{url+item.sku_image}}" wx:if="{{order_goods[2].list.length<=4}}" wx:for="{{order_goods[2].list}}"></image>
+      <view class="total-image" wx:if="{{order_goods[2].list.length>4}}">
+        共{{order_goods[2].list.length}}件
+      </view>
+
+    </view>
+
+
+    <view class="other-tips">
+      <text class="other-tips-text1 other-tips-text3">商品总额</text>
+      <text class="other-tips-text2">¥{{order_goods[2].you_cost_money}}</text>
+    </view>
+
+    <view class="other-price">
+      <image src="/images/yun.png"></image>
+      <text class="other-price-title">运费</text>
+      <text class="other-price-info">￥{{order_goods[2].you_yunfei_money}}</text>
+    </view>
+
+    <view class="other-price">
+      <image src="/images/hui.png"></image>
+      <text class="other-price-title">商品优惠</text>
+      <text class="other-price-info">￥{{order_goods[2].you_jiesheng_money}}</text>
+    </view>
+    <textarea placeholder="请输入备注" style="padding-top: 26rpx;padding-left: 24rpx;padding-right:24rpx;font-size: 30rpx;color:#333;background: #F7F8FA;border-radius: 24rpx;box-sizing: border-box;display: block;margin-top: 29rpx;width: 94%;margin: 29rpx auto;" />
+    <view class="fysm">
+      <text class="fysm-text2">小计</text>
+      <text class="fysm-text3">¥{{order_goods[2].you_xiaoji_money}}</text>
+    </view>
+  </view>
+
+
+<!-- 京东 -->
+  <view class="commen-view" wx:if="{{order_goods[3]}}">
+    <view class="tags jd">
+      <image src="/images/jingdong.png"></image>
+      <text>京东</text>
+    </view>
+
+    <view class="image-list">
+
+      <image class="image-item" src="/images/goods.png" wx:if="{{order_goods[3].list.length <= 4}}" wx:for="{{order_goods[3].list}}"></image>
+      <view class="total-image" wx:if="{{order_goods[3].list.length > 4}}">
+        共{{order_goods[3].list.length}}件
+      </view>
+
+    </view>
+
+
+    <view class="other-tips">
+      <text class="other-tips-text1 other-tips-text3">商品总额</text>
+      <text class="other-tips-text2">¥{{order_goods[3].you_cost_money}}</text>
+    </view>
+
+    <view class="other-price">
+      <image src="/images/yun.png"></image>
+      <text class="other-price-title">运费</text>
+      <text class="other-price-info">￥{{order_goods[3].you_yunfei_money}}</text>
+    </view>
+
+    <view class="other-price">
+      <image src="/images/hui.png"></image>
+      <text class="other-price-title">商品优惠</text>
+      <text class="other-price-info">￥1{{order_goods[3].you_jiesheng_money}}</text>
+    </view>
+    <textarea placeholder="请输入备注" style="padding-top: 26rpx;padding-left: 24rpx;padding-right:24rpx;font-size: 30rpx;color:#333;background: #F7F8FA;border-radius: 24rpx;box-sizing: border-box;display: block;margin-top: 29rpx;width: 94%;margin: 29rpx auto;" />
+    <view class="fysm">
+      <text class="fysm-text2">小计</text>
+      <text class="fysm-text3">¥{{order_goods[3].you_xiaoji_money}}</text>
+    </view>
+  </view>
+
+  <view class="commen-view">
+    <view class="commen-view-title">
+      <view></view>
+      <text>订单信息</text>
+    </view>
+    <view class="order-item">
+      <text>订单号</text>
+      <text>{{result.order_no}}</text>
+    </view>
+    <view class="order-item">
+      <text>商品总数</text>
+      <text>{{result.goods_num}}</text>
+    </view>
+    <view class="order-item">
+      <text>商品总额</text>
+      <text>¥{{result.goods_money}}</text>
+    </view>
+    <view class="order-item">
+      <text>下单时间</text>
+      <text>{{result.time}}</text>
+    </view>
+
+  </view>
+  <view class="commen-view">
+    <view class="commen-view-title">
+      <view></view>
+      <text>开票信息</text>
+    </view>
+    <view class="order-item">
+      <text>开票类型</text>
+      <text>按月开具</text>
+    </view>
+
+    <view class="bill-method-box">
+      <van-collapse value="{{ activeNames }}" bind:change="onBillingChange">
+        <van-collapse-item title="{{userInfo.make_company}}" name="1">
+          <view class="bill-method">{{userInfo.make_duty}}</view>
+          <view class="bill-method">{{userInfo.make_address}}</view>
+          <view class="bill-method">{{userInfo.make_phone}}</view>
+          <view class="bill-method">{{userInfo.make_bank}}</view>
+          <view class="bill-method">{{userInfo.make_number}}</view>
+          <view class="bill-method">{{userInfo.make_title}}</view>
+        </van-collapse-item>
+      </van-collapse>
+    </view>
+
+    <view class="order-item">
+      <text>发票内容</text>
+      <text>商品明细</text>
+    </view>
+  </view>
+
+  <view class="querenshouhuo" bindtap="submitHandler" wx:if="{{result.order_status == 3}}">确定收货</view>
+</view>

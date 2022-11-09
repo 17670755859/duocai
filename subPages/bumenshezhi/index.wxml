@@ -1,0 +1,15 @@
+<!--部门设置-->
+<view class="container">
+  <view class="commen-view" data-id="{{item.department_id}}" bindtap="toZibumen" wx:for="{{list}}">
+    <view class="szt"></view>
+    <text class="zw">{{item.name}}</text>
+    <view class="options">
+      <view class="xiugai" data-id="{{item.department_id}}" catchtap="modifyHandler">修改</view>
+      <view class="shanchu" data-id="{{item.department_id}}" catchtap="deleteHandler">删除</view>
+    </view>
+  </view>
+</view>
+
+<view class="confirm-options">
+  <view class="confirm" bindtap="toAdddept">新增</view>
+</view>

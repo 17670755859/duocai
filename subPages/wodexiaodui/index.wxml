@@ -1,0 +1,41 @@
+<!-- 我的小队 -->
+
+<view class="container">
+  <view class="commen-view">
+    <view class="commen-view-title">
+      <view></view>
+      <text>我的小队(共{{peopleNum}}人)</text>
+    </view>
+
+  </view>
+
+  <view class="commen-view" wx:for="{{list}}">
+    <view class="header-box">
+      <image src="{{item.headimg || '/images/header1.png'}}"></image>
+
+      <view class="header-commen">
+        <view class="header-name">
+          <text>{{item.realname}} {{item.job_name || ''}}({{item.department_name || '暂无部门'}})</text>
+          <text class="{{item.status == 0 ? 'yty' : 'zc'}}">{{item.status == 0 ? '已停用' : '正常'}}</text>
+        </view>
+
+        <view class="phone-box">
+          <text>{{item.mobile}}</text>
+          <view wx:for="{{item.roles}}" wx:if="{{index<=1}}">{{item.role_name}}</view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class="option-btn">
+      <view data-id="{{item.member_id}}" catchtap="toEdit">编辑</view>
+      <view wx:if="{{item.status == 0}}" data-id="{{item.member_id}}" data-status="{{item.status}}" bindtap="setUser">启用</view>
+      <view wx:else data-id="{{item.member_id}}" data-status="{{item.status}}" bindtap="setUser">停用</view>
+    </view>
+
+  </view>
+
+  <view class="confrim {{isIPhoneX?'iphoneXPadding':''}}" bindtap="toAdd">
+    <view class="btn">添加人员</view>
+  </view>
+</view>

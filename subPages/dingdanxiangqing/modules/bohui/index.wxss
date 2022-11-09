@@ -1,0 +1,11 @@
+/* subPages/dingdanxiangqing/modules/bohui/index.wxss */
+@import "/commen/caigou.wxss";
+.iphoneXPadding {
+  padding-bottom: 68rpx;
+}
+.options-btn{
+  box-shadow: none;
+}
+.cx-box{
+  padding-bottom:140rpx;
+}

@@ -1,0 +1,62 @@
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+    <!-- <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+        <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;'>
+            <image src="/images/left1.png" bindtap="naviBack"></image>
+            <text>设置</text>
+
+        </view>
+    </view> -->
+    <view class="background"></view>
+
+    <view class="commen-box">
+
+        <view class="commen-view">
+            <view class="commen-view-item">
+                <text class="text1">企业认证</text>
+                <text class="text2">{{company_name}}</text>
+                <image src="/images/yrz.png" class="yrz"></image>
+            </view>
+
+            <view class="commen-view-item">
+                <text class="text1">企业认证</text>
+                <text class="text2 text3">{{address}}</text>
+            </view>
+
+
+        </view>
+
+        <view class="commen-view">
+    <view class="commen-view-item" bindtap="toKaipiao">
+        <text class="text1 text3">开票信息</text>
+      
+        <image src="/images/right.png" class="right"></image>
+    </view>
+
+    <view class="commen-view-item" bindtap="toAccount" wx:if="{{filters.include(permissions, 3)}}">
+        <text class="text1 text3">账户安全</text>
+        <image src="/images/right.png" class="right"></image>
+    </view>
+
+    <view class="commen-view-item" bindtap="toZhiwushezhi">
+        <text class="text1 text3">职务设置</text>
+        <image src="/images/right.png" class="right"></image>
+    </view>
+
+    <view class="commen-view-item" bindtap="toBumen">
+        <text class="text1 text3">部门</text>
+        <image src="/images/right.png" class="right"></image>
+    </view>
+
+</view>
+
+    </view>
+
+
+
+
+
+
+
+
+</view>

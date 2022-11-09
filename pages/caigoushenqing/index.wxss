@@ -1,0 +1,7 @@
+/* pages/order/index.wxss */
+
+
+page{
+  background: #F7F8FA;
+}
+

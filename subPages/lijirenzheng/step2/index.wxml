@@ -1,0 +1,12 @@
+<step step="{{2}}"></step>
+<view class="commen-view" hover-class="none" hover-stop-propagation="false">
+  <view class="commen-view-title">
+    <view></view>
+    <text>多采代采服务协议</text>
+  </view>
+  <view class="paragraph">一、甲方在内部确定办公费用控制及办公类产品采购服务的财务预订机制。</view><view class="paragraph paragraph-text">1、确定常规产品及服务的消耗定额。</view><view class="paragraph paragraph-text">2、建立办公费用支出档案。</view><view class="paragraph paragraph-text">3、建立采购计划及预评估制度。 </view><view class="paragraph paragraph-text">4、及时填写回馈产品质量及服务质量意见单。</view><view class="paragraph">二、乙方积极参与甲方采购评估，并协助甲方对办公费用进行管理和控制。</view><view class="paragraph paragraph-text">1、在收到甲方采购计划申报表后，向甲方提供采购计划评估表。</view>　 <view class="paragraph paragraph-text">2、协助甲方确定常规产品消耗定额。</view>　<view class="paragraph paragraph-text">3、提供甲方历次采购档案。</view><view class="paragraph paragraph-text">　4、每月向甲方提供分产品分服务的采购报表。</view><view class="paragraph">三、乙方提供如下产品和服务承诺。</view><view class="paragraph paragraph-text">1、提供的产品质量符合该产品服务质量标准，达到甲方对产品服务质量的满意预设。不出售伪劣商品，残、次品。</view><view class="paragraph paragraph-text">2、当乙方提供的产品不符合要求时，甲方无条件退货、换货。退货、换货时间不得超过两天。</view><view class="paragraph paragraph-text">3、乙方必须按定单要求准时将产品送至甲方地址，确保送货及时。</view><view class="paragraph paragraph-text">4、在甲方按正常计划采购的前提下，乙方须满足甲方应急采购要求无论金额高低数量大小，都须及时送达。</view>
+</view>
+
+<view class="confirm" bindtap="toNext">下一步</view>
+
+<view class="fuwurexian">服务热线:453-5464-561 8:00-18:00</view>

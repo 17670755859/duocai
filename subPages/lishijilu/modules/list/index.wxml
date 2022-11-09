@@ -1,0 +1,119 @@
+<scroll-view class="list" scroll-y style="height: {{height}}px;" refresher-enabled="{{true}}" refresher-threshold="{{100}}" bindscrolltolower="bindScrollToLower">
+  <no-data wx:if="{{!result.length}}"></no-data>
+  <view class="apply-item" data-id="{{item.order_id}}" bindtap="toDetail" wx:for="{{result}}">
+    <view class="apply-num">
+      <text class="num">NO.{{item.order_no}}</text>
+      <text class="status">{{item.refund_type == 1 ? '仅退款' : item.refund_type == 2 ? '退货退款' : '换货'}}</text>
+      <image src="/images/right1.png"></image>
+    </view>
+
+    <image src="/images/line.png" class="line"></image>
+    <view class="goods-item">
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">申请时间</text>
+        <text class="goods-item-content-text2">{{item.time}}</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">数量</text>
+        <text class="goods-item-content-text2">{{item.num}}</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">原由</text>
+        <text class="goods-item-content-text2">{{item.refund_reason}}</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">图片</text>
+        <view class="image-list">
+          <image src="{{item}}" wx:for="{{item.imgs}}"></image>
+        </view>
+      </view>
+      <image src="/images/dcl.png" class="status-image" wx:if="{{item.refund_status == 1}}"></image>
+      <image src="/images/ycl.png" class="status-image" wx:if="{{item.refund_status == 3}}"></image>
+      <image src="/images/ycx1.png" class="status-image" wx:if="{{item.is_chexiao == 1}}"></image>
+    </view>
+
+    <view class="option-btn">
+      <view class="confirm" data-index="{{index}}" wx:if="{{item.refund_status == 1}}" catchtap="chexiao">撤销</view>
+    </view>
+
+  </view>
+
+  <!-- <view class="apply-item" bindtap="toDetail" data-status='3'>
+    <view class="apply-num">
+      <text class="num">NO.2354645645767</text>
+      <text class="status">换货</text>
+      <image src="/images/right1.png"></image>
+    </view>
+
+    <image src="/images/line.png" class="line"></image>
+    <view class="goods-item">
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">申请时间</text>
+        <text class="goods-item-content-text2">2022/03/03 12:00</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">数量</text>
+        <text class="goods-item-content-text2">3</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">原由</text>
+        <text class="goods-item-content-text2">质量问题</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">图片</text>
+        <view class="image-list">
+          <image src="/images/goods.png" wx:for="{{5}}"></image>
+        </view>
+      </view>
+      <image src="/images/ycl.png" class="status-image"></image>
+    </view>
+
+   
+  </view>
+
+  <view class="apply-item" bindtap="toDetail" data-status='3'>
+    <view class="apply-num">
+      <text class="num">NO.2354645645767</text>
+      <text class="status">换货</text>
+      <image src="/images/right1.png"></image>
+    </view>
+
+    <image src="/images/line.png" class="line"></image>
+    <view class="goods-item">
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">申请时间</text>
+        <text class="goods-item-content-text2">2022/03/03 12:00</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">数量</text>
+        <text class="goods-item-content-text2">3</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">原由</text>
+        <text class="goods-item-content-text2">质量问题</text>
+      </view>
+
+      <view class="goods-item-content">
+        <text class="goods-item-content-text1">图片</text>
+        <text class="goods-item-content-text2">暂无</text>
+      </view>
+      <image src="/images/ycx1.png" class="status-image"></image>
+    </view>
+
+   
+  </view> -->
+
+
+
+</scroll-view>
+
+<!-- 撤销操作弹窗 -->
+<chexiao-order list="{{obj}}" bind:confirm="cexiaoHandler" show="{{show_cx}}"></chexiao-order>

@@ -1,0 +1,13 @@
+<!--微信支付-->
+<view class="container">
+<image src="/images/xxzfcg.png" class="xxzfcg"></image>
+  <text class="text1">采购成功!</text>
+  <text class="text2">我们将再1个工作日内与您取得联系。</text>
+
+
+
+  <view class="option">
+    <view bindtap="seeOrder">查看订单</view>
+    <view bindtap="continueOrder">继续下单</view>
+  </view>
+</view>

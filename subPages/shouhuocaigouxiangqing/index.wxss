@@ -1,0 +1,76 @@
+page {
+  background: #F7F8FA;
+}
+.container{
+  padding-bottom: 100rpx;
+}
+.list{
+  width: 94%;
+  margin: 0 auto ;
+}
+.item{
+  background: #FFFFFF;
+border-radius: 24rpx ;
+margin-top: 24rpx;
+
+}
+.order-num{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 32rpx 24rpx 0;
+}
+
+.order-num>text{
+  font-size: 28rpx;
+font-weight: 400;
+color: #333333;
+flex: 1;
+
+}
+.order-num>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.line{
+  width: 100%;
+  height: 32rpx;
+}
+.avatar{
+  display: flex;
+  flex-direction: row;
+  padding: 0 24rpx 32rpx;
+}
+.avatar>image{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+.avatar>.avatar-content{
+flex: 1;
+margin-left: 16rpx;
+display: flex;
+flex-direction: column;
+}
+.avatar-content>.name{
+  font-size: 32rpx;
+font-family: PingFang SC-Medium, PingFang SC;
+font-weight: 500;
+color: #333333;
+}
+.num-box{
+  margin-top: 28rpx;
+  display: flex;
+  flex-direction: row;
+}
+.num-box>text{
+  font-size: 28rpx;
+font-weight: 400;
+color: #333333;
+}
+.num-box>text:nth-child(2){
+  margin-left: 24rpx;
+}
+.num-box>text:nth-child(3){
+  color: #FF6200;
+}

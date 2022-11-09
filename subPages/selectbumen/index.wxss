@@ -1,0 +1,17 @@
+/* subPages/selectbumen/index.wxss */
+.confirm {
+  position: fixed;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  width: 88%;
+  height: 88rpx;
+  margin: 48rpx auto 0;
+  background: linear-gradient(312deg, #2362ED 0%, #6191FD 100%);
+  border-radius: 44rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 34rpx;
+  font-weight: 400;
+  color: #FFFFFF;
+}

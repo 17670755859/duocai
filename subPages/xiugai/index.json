@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "修改",
+  "usingComponents": {
+    "van-stepper": "@vant/weapp/stepper/index"
+  }
+}

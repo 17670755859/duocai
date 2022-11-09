@@ -1,0 +1,21 @@
+<!-- 联系团长 -->
+
+<van-dialog use-slot show="{{ show }}" showConfirmButton="{{false}}" showCancelButton="{{false}}"  customStyle="background-color:transparent" >
+  <view class="lxtz-box">
+    <!-- <image src="/images/close.png" </image> -->
+    <image src="{{user.avatar}}" class="lxtz" />
+    <text class="name">{{user.nickname}}</text>
+    <!-- <view class="call" bindtap="call">
+      <image src="/images/phone.png"></image>
+      <text>拨打电话</text>
+    </view> -->
+
+    <view class="qrcode">
+      <image src="{{user.wechat_qr_img}}" 	show-menu-by-longpress="{{true}}"></image>
+      <text>识别二维码，与团长沟通</text>
+    </view>
+  </view>
+
+  <image src="/images/close.png" class="close" bindtap="onClose"></image>
+
+</van-dialog>

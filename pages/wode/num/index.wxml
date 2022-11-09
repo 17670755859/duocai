@@ -1,0 +1,4 @@
+<!--pages/wode/num/index.wxml-->
+<view class="cont">
+  <view class="num" wx:if="{{num>0}}">{{num}}</view>
+</view>

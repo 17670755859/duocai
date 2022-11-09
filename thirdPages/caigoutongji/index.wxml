@@ -1,0 +1,67 @@
+<!--采购统计-->
+<view class="container">
+
+    <view class="tj-box">
+        <view class="timer" bindtap="chooseTimer">
+            <text>{{date}}</text>
+            <image src="/images/sjx-down2.png"></image>
+        </view>
+
+        <view class="tongji">
+            <text class="text1">{{sumMoney}}</text>
+            <text class="text2">{{month}}月采购金额 (元)</text>
+            <image src="/images/tongji.png"></image>
+        </view>
+
+        <view class="caigoumingxi">
+            <view class="commen-view-title">
+                <view></view>
+                <text>采购明细</text>
+            </view>
+
+            <view class="cgmx-box">
+                <view class="cgmx-box-title">
+                    <view>日期</view>
+                    <view>数量</view>
+                    <view>金额</view>
+                </view>
+
+                <view wx:if="{{orders.length != 0}}">
+                    <view class="cgmx-box-item" wx:for="{{orders}}" wx:for-item="item">
+                        <view>{{item.time}}</view>
+                        <view>{{item.goods_num}}</view>
+                        <view>¥{{item.goods_money}}</view>
+                    </view>
+                </view>
+                <view wx:else>
+                    <view class="cgmx-box-item">
+                    <view></view>
+                    <view>暂无数据</view>
+                    <view></view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <view class="next-box next-box-1">
+        <view class="divider"></view>
+
+        <view class="commen-view-title">
+            <view></view>
+            <text>采购趋势</text>
+        </view>
+
+        <view class="line-echart">
+            <ec-canvas id="mychart-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+        </view>
+
+    </view>
+
+
+</view>
+
+<!-- 时间选择 -->
+<van-action-sheet show="{{ show }}">
+    <van-datetime-picker type="year-month" value="{{ currentDate }}" max-date="{{ maxDate }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+</van-action-sheet>

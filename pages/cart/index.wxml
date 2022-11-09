@@ -1,0 +1,63 @@
+<!-- 购物车 -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+  <view class="product-box">
+    <van-checkbox-group value="{{ result }}" bind:change="onChange">
+      <no-data wx:if="{{!dataList.length}}"></no-data>
+      <view class="product-item {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{dataList}}">
+        <view class="item-left" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove">
+          <van-checkbox name="{{index}}"></van-checkbox>
+          <image src="{{url+item.sku_image}}" class="product-item-image"></image>
+          <view class="product-item-content">
+            <view class="product-item-title">
+              <view class="dc">{{item.goods_type == 1 ? '代采' : item.goods_type == 2 ? '优选' : '京东'}}</view>
+              <text class="title">{{item.sku_name}}</text>
+              <!-- <text class="num">×{{item.num}}</text> -->
+            </view>
+
+            <view class="desc">{{item.introduction}}</view>
+
+            <view class="save-price">已省¥{{filters.toFix(item.market_price - item.price)}}</view>
+
+            <view class="price-box">
+              <view class="price-num">
+                <text class="cur-price">¥{{item.price}}</text>
+                <text class="ori-price">¥{{item.market_price}}</text>
+              </view>
+              <!-- <view class="ori-price">¥9.88</view> -->
+              <view class="stepper-cart">
+                <!-- <van-stepper value="{{ 1 }}" integer bind:overlimit="onStepperOver" bind:plus="addCart" bind:minus="reduceCart"/> -->
+                <image src="{{item.num > 0 ? '/images/cart-reduce-active.png' : '/images/cart-reduce.png'}}" bindtap="reduceCart" data-index="{{index}}"></image>
+                <input type="number" value="{{item.num}}" bindinput="bindInput" bindblur="blurInpit" data-index="{{index}}" disabled="{{item.num==0}}" />
+                <image src="/images/cart-plus.png" bindtap="touchOnGoods" data-index="{{index}}"></image>
+              </view>
+            </view>
+
+          </view>
+        </view>
+        <view class="delete" data-id="{{item.cart_id}}" bindtap="delItem">删除</view>
+      </view>
+      <view style="height: {{isIPhoneX ? '196' : '128'}}rpx;"></view>
+
+
+    </van-checkbox-group>
+
+  </view>
+
+</view>
+
+<view class="bottom" style="bottom:{{bottom}};" wx:if="{{showBottom}}">
+  <van-checkbox value="{{ isSelectAll }}" bind:change="onSelectAll" style="margin-left: 24rpx;">全选</van-checkbox>
+  <view class="hj">
+    <view><text>合计：</text><text>￥</text><text>{{filters.toFix(totalMoney)}}</text></view>
+    <view>已省¥{{filters.toFix(economize)}}</view>
+  </view>
+  <!-- <text class="unit">￥</text>
+    <text class="price">{{totalPrice}}</text> -->
+  <view class="yc" bindtap="deleteAll">移除</view>
+  <view bindtap="toConfirmOrder" class="confirmOrder">提交采购单</view>
+</view>
+<tabbar activeIdx="{{2}}" carNum="{{carNum}}"></tabbar>
+
+<view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;">
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "签署协议",
+    "usingComponents": {
+        "step":"../modules/steps/index"
+    }
+}

@@ -1,0 +1,14 @@
+<!--微信支付-->
+<view class="container">
+<image src="/images/xxzfcg.png" class="xxzfcg"></image>
+  <text class="text1">采购申请提交成功!</text>
+  <text class="text2">等待采购部门确认</text>
+
+
+
+  <view class="option">
+  <view bindtap="seeProgress">查看采购进度</view>
+  <view bindtap="continueShopping">继续选购</view>
+  </view>
+
+</view>

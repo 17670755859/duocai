@@ -1,0 +1,30 @@
+<van-action-sheet show="{{ show }}" title="投诉" bind:close="onClose">
+
+
+  <view class="complaint">
+    <view class="header">
+      <image src="{{data.avatar}}"></image>
+      <text>{{data.nickname}}团长</text>
+    </view>
+
+    <textarea placeholder="请输入投诉内容" class="textarea" value="{{form.content}}"  bindinput="bindInput" maxlength="200"/>
+    <text class="tips">补充图片/视频</text>
+
+
+
+    <view class='list-image'>
+      <view wx:for='{{imgFile}}' wx:key="{{index}}">
+        <image src='{{item.url}}' mode="aspectFill" class='landlord-image' bindtap='previewImage' data-url='{{item.url}}' wx:if="{{item.type=='image'}}"></image>
+        <video class="image" id="myVideo" src="{{item.url}}" show-center-play-btn='{{true}}'  controls object-fit="cover" wx:if="{{item.type=='video'}}" play-btn-position="center"></video>
+        <image src='/images/release/close.png' class='close' catchtap='deleteLandImage' data-index="{{index}}"></image>
+      </view>
+      <view class='add-image' bindtap='chooseImage' wx:if='{{imgFile.length<5}}'>
+        <image src="/images/release/add.png"></image>
+      </view>
+
+    </view>
+
+    <view class="options" bindtap="handleSubmit">提交</view>
+  </view>
+
+</van-action-sheet>

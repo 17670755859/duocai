@@ -1,0 +1,23 @@
+<!--微信支付-->
+<view class="container">
+  <text class="text1">采购成功</text>
+  <text class="text2">{{allMoney}}</text>
+  <text class="text3">本次采购(元)</text>
+
+  <view class="box">
+    <view class="content">
+      <text>{{mounth}}月已采购金额(元)</text>
+      <text>{{reserved_money}}</text>
+    </view>
+    <view class="content">
+      <text>{{mounth}}月剩余信用额度(元)</text>
+      <text>{{shengyu_money}}</text>
+    </view>
+  </view>
+
+  <view class="option">
+  <view bindtap="seeOrder">查看订单</view>
+  <view bindtap="continueOrder">继续下单</view>
+  </view>
+
+</view>

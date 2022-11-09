@@ -1,0 +1,64 @@
+<view class="container">
+  <view class="commen-view">
+
+    <view class="commen-view-items">
+      <text class="commen-view-item-label">用户名</text>
+      <view class="commen-view-items-input">
+        <input type="text" value="{{username}}" data-name="username" bindinput="inputBlur" placeholder="请输入昵称" />
+      </view>
+    </view>
+    <view class="commen-view-items">
+      <text class="commen-view-item-label">真实姓名</text>
+      <view class="commen-view-items-input">
+        <input type="text" data-name="realname" value="{{realname}}" bindinput="inputBlur" placeholder="请输入真实姓名" />
+      </view>
+    </view>
+    <view class="commen-view-items">
+      <text class="commen-view-item-label">手机号</text>
+      <view class="commen-view-items-input">
+        <input type="number" value="{{mobile}}" data-name="mobile" bindinput="inputBlur" placeholder="请输入手机号" />
+      </view>
+    </view>
+    <view class="commen-view-items" bindtap="toChoosePost">
+      <text class="commen-view-item-label">职务</text>
+      <view class="commen-view-items-input">
+        <!-- <input type="text" placeholder="请选择职务" /> -->
+        <text class="{{job_name?'active-chooice':'active-no-chooice'}} commen-view-items-input-text">{{job_name?job_name:'请选择职务'}}</text>
+        <image src="/images/right.png" class="right"></image>
+
+      </view>
+
+    </view>
+    <view class="commen-view-items" bindtap="toChooseBumen">
+      <text class="commen-view-item-label">部门</text>
+      <view class="commen-view-items-input">
+        <text class="{{department_name?'active-chooice':'active-no-chooice'}} commen-view-items-input-text">{{department_name?department_name:'请选择部门'}}</text>
+        <image src="/images/right.png" class="right"></image>
+      </view>
+    </view>
+    <view class="commen-view-items" wx:if="{{!id}}">
+      <text class="commen-view-item-label">密码</text>
+      <view class="commen-view-items-input">
+        <input type="text" value="{{password}}" data-name="password" bindinput="inputBlur" placeholder="请输入用户登陆密码" />
+      </view>
+    </view>
+    <view class="commen-view-items commen-view-items-input-no">
+      <text class="commen-view-item-label">角色(支持多选)</text>
+      <text class="mrbx">默认(必选)</text>
+
+      <view class="mrbx-view" wx:if="{{item.active}}" wx:for="{{roles}}">{{item.role_name}}</view>
+
+      <text class="kx">可选</text>
+      <view class="options-view ">
+        <view wx:for="{{roles}}" class="{{item.active ? 'active' : ''}}" data-index="{{index}}" bindtap="selectRole">{{item.role_name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="save-btns {{isIPhoneX?'iphoneXPadding':''}}">
+  <view>取消</view>
+  <view bindtap="submitHandler"> 确定</view>
+</view>
+
+
+<van-action-sheet show="{{ show }}" actions="{{ jobs }}" bind:close="onClose" bind:select="onSelect" />

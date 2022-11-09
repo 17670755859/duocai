@@ -1,0 +1,35 @@
+<!--执行撤销操作弹窗-->
+
+<van-dialog use-slot show="{{ showBox }}" show-cancel-button="{{false}}" showConfirmButton="{{false}}">
+  <view class="cx-box">
+
+    <view class="cx-title">是否确认进行撤销操作!</view>
+    <view class="goods-box">
+      <view class="order-id">订单号 {{list.order_no}}</view>
+      <view class="goods-list">
+        <view class="goods-item">
+          <image src="{{url+list.sku_image}}" class="goods-item-image"></image>
+          <view class="goods-item-content">
+            <view class="goods-item-content-title">
+              <text>{{list.sku_name}}</text>
+              <text>X{{list.num}}</text>
+            </view>
+
+            <view class="goods-item-content-price">¥{{list.price}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="hj">
+        <text>共{{list.num}}件，合计金额</text>
+        <text>¥</text>
+        <text>{{list.goods_money}}</text>
+      </view>
+    </view>
+
+    <view class="options-btn" >
+<view class="cancel" bindtap="toClose">取消</view>
+<view class="confirm" bindtap="confirm">确认</view>
+</view>
+  </view>
+</van-dialog>

@@ -1,0 +1,84 @@
+<wxs module="fillers" src="../../utils/filter.wxs"></wxs>
+<!--代采-->
+<!-- <van-tabs active="{{ active }}" title-active-color="#2362ED" title-inactive-color="#333333" color="#2362ED">
+  <van-tab title="零差价代采"> -->
+<view class="container">
+  <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;margin-right:{{jiaonang}}px'>
+      <!-- <view class="nav-back" bindtap="navigateBack">
+        <image src="/images/back.png"></image>
+      </view> -->
+      <van-search bindtap="goSearch" disabled bind:search="changeSearch" value="{{ keyword }}" placeholder="请输入搜索关键词" class="nav-name"/>
+      <!-- <text class="nav-name">商品详情</text> -->
+    </view>
+  </view>
+  <view class="zhanwei" style="height: {{statusbarH*2 + 20}}px;"></view>
+  <view class="dc-tabs">
+    <view class="dc-tabs-item " wx:key="index" wx:for="{{tabs}}" bindtap="changeTabs" data-index="{{index}}">
+      <text class="dc-tabs-item-text {{activeTabsIndex==index?'dc-tabs-item-active':''}}">{{item}}</text>
+      <text class="dc-tabs-item-line {{activeTabsIndex==index?'dc-tabs-item-active':''}}"></text>
+    </view>
+
+
+  </view>
+  <view class="type-box">
+    <view class="type-box-item" wx:key="index" wx:for="{{type1List}}" bindtap="changeType" data-index="{{index}}">
+      <view class="type-box-item-image {{activeIndex==index?'active':''}}">
+        <image src="{{url+item.image}}"></image>
+      </view>
+      <view class="type-box-item-text {{activeIndex==index?'active':''}}">{{item.category_name}}</view>
+    </view>
+
+  </view>
+
+  <scroll-view class="goods-list" scroll-y style="height:{{height}}px" bind:scrolltolower="loadMoreHandler">
+    <view class="scroll-box">
+      <view class="goos-type" style="height:{{height}}px">
+        <view class="goods-type-item {{typeIndex==index?'active-background':''}}" wx:key="index" wx:for="{{type1List[activeIndex].child_list}}" catchtap="changeTypeGoods" data-index="{{index}}">
+          <view class="border" wx:if="{{typeIndex==index}}"></view>
+          <text class="{{typeIndex==index?'active-text':''}}">{{item.category_name}}</text>
+        </view>
+      </view>
+
+      <view class="goods-box">
+        <view class="goods-box-type">
+          <view wx:for="{{type1List[activeIndex].child_list[typeIndex].child_list}}" wx:key="index" data-id="{{item.category_id}}" data-level="{{item.level}}" class="{{goodsTypeIndex==index?'goods-type-active':''}}" bindtap="changeGoodsItemType" data-index="{{index}}">{{item.category_name}}</view>
+        </view>
+        <no-data wx:if="{{!list.length}}"></no-data>
+        <view class="goods-item" wx:key="index" wx:for="{{list}}">
+          <image mode="aspectFill" src="{{url+item.sku_image}}" class="goods-image" data-id="{{item.sku_id}}" bindtap="toGoodsDetail"></image>
+          <view class="goods-item-content">
+            <view class="goods-item-content-title" data-id="{{item.sku_id}}" bindtap="toGoodsDetail">
+              <view>{{item.goods_type == 1 ? '代采' : item.goods_type == 2 ? '优选' : '京东'}}</view>
+              <text>{{item.sku_name}}</text>
+            </view>
+
+            <view class="goods-item-content-des"><text>{{item.introduction}}</text></view>
+            <view class="goods-item-content-save">
+              <view>0差价代采</view><text>预计省¥{{fillers.toFix(item.market_price - item.price)}}</text>
+            </view>
+
+            <view class="goods-item-content-price">
+              <text class="cur-unit">¥</text>
+              <text class="cur-price">{{item.price}}</text>
+              <text class="ori-price">¥{{item.market_price}}</text>
+
+              <view class="stepper-cart">
+                <image src="{{item.cart_num > 0 ? '/images/cart-reduce-active.png' : '/images/cart-reduce.png'}}" catchtap="reduceCart" data-index="{{index}}"></image>
+                <input type="number" value="{{item.cart_num}}" bindinput="bindInput" bindblur="blurInpit" data-index="{{index}}" disabled="{{item.cart_num == 0}}" />
+                <image src="/images/cart-plus.png" catchtap="touchOnGoods" data-index="{{index}}"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="goods-item"></view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- </van-tabs>  -->
+  <tabbar activeIdx="{{1}}" carNum="{{carNum}}"></tabbar>
+
+  <view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;">
+  </view>
+</view>

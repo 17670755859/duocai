@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "体验账号",
+  "usingComponents": {
+      "van-radio": "@vant/weapp/radio/index"
+  }
+}

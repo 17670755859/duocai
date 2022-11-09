@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="header" bindtap="chooseImage">
+    <image src="{{headImg?headImg:'/images/header1.png'}}" class="avatar" mode="aspectFill"></image>
+    <image src="/images/camera.png" class="camera"></image>
+  </view>
+  <view class="commen-view">
+
+    <view class="commen-view-title">
+      <view></view>
+      <text>账户信息</text>
+    </view>
+    <view class="commen-view-item">
+      <text class="text1">姓名</text>
+      <text class="text2">{{userInfo.realname}}</text>
+    </view>
+
+
+    <view class="commen-view-item">
+      <text class="text1">手机号</text>
+      <text class="text2">{{userInfo.mobile}}</text>
+    </view>
+
+    <view class="commen-view-item commen-view-item-no" bindtap="xiugaimima">
+      <text class="text1">密码</text>
+      <text class="text2 text3">修改</text>
+      <image src="/images/right.png" class="right"> </image>
+    </view>
+
+  </view>
+
+
+  <view class="commen-view">
+
+    <view class="commen-view-title">
+      <view></view>
+      <text>其他信息</text>
+    </view>
+    <view class="commen-view-item">
+      <text class="text1">职务</text>
+      <text class="text2">{{userInfo.job_name || '无'}}</text>
+    </view>
+
+
+    <view class="commen-view-item">
+      <text class="text1">部门</text>
+      <text class="text2">{{userInfo.department_name || '无'}}</text>
+    </view>
+
+    <view class="commen-view-item-role">
+      <text class="text1">角色</text>
+      <view class="role-list">
+        <view wx:for="{{role}}">{{item.role_name}}</view>
+        <!-- <view class="view-active">采购人</view> -->
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="confirm" bindtap="loginOutHandler">退出登录</view>

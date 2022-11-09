@@ -1,0 +1,278 @@
+page {
+  background: #F7F8FA;
+}
+
+.container {
+  padding-bottom: 100rpx;
+}
+
+.wode-back {
+  width: 100%;
+  height: 429rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+  /* flex-direction: ; */
+}
+
+.wode-back>image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.no-login-tips {
+  margin-left: 26rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-login-tips>.no-login-tips-text1 {
+  font-size: 52rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.no-login-tips>.no-login-tips-text2 {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 24rpx;
+}
+
+.process-box {
+  width: 92%;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  /* margin: -116rpx auto 0; */
+  padding: 56rpx 0;
+  position: absolute;
+  top: 116rpx;
+  top: 320rpx;
+  left: 4%;
+  z-index: 2;
+}
+
+.process-box-view {
+  width: 92%;
+  margin: 0 auto 40rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 34rpx;
+  border-radius: 44rpx;
+}
+
+.sqsydc {
+  background: linear-gradient(312deg, #2362ED 0%, #6191FD 100%);
+  color: #FFFFFF;
+
+}
+
+.yyzh {
+  background: #F3F7FE;
+  color: #2362ED;
+}
+
+.sqtyzh {
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #2362ED;
+  /* padding: 40rpx 0 0; */
+  display: block;
+}
+
+.introduce {
+  margin-left: 26rpx;
+  /* height: 305rpx; */
+}
+
+.introduce .yry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.introduce .yry>text {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.introduce .yry>image {
+  width: 104rpx;
+  height: 46rpx;
+  margin-left: 24rpx;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.member>text:nth-child(1) {
+  font-size: 58rpx;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.member>text:nth-child(2) {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-left: 20rpx;
+}
+
+.commen-box {
+  width: 94%;
+  margin: 24rpx auto;
+  margin-top: -110rpx;
+}
+
+.commen-view {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 32rpx 24rpx;
+  box-sizing: border-box;
+  margin-top: 24rpx;
+}
+
+.person {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.person>.header {
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 50%;
+}
+
+.person>.name {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-left: 32rpx;
+}
+
+.person>.cgr {
+  height: 40rpx;
+  background: linear-gradient(126deg, #FB944C 0%, #FB944C 0%, #FF6200 100%);
+  border-radius: 20rpx;
+  padding: 0 16rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  margin-left: 24rpx;
+  line-height: 40rpx;
+}
+
+.zd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  align-items: center;
+}
+
+.zd>view:nth-child(1) {
+  margin-right: 18rpx;
+}
+
+.zd>view {
+  flex: 1;
+  position: relative;
+}
+
+.zd>view>image {
+  width: 100%;
+  height: 104rpx;
+
+}
+
+.zd>view>text {
+  position: absolute;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+  padding-left: 24rpx;
+  line-height: 104rpx;
+}
+
+.commen-view-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.commen-view-title>.title {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+  flex: 1;
+}
+
+.commen-view-title>.num {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #666666;
+}
+
+.commen-view-title>image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 32rpx;
+}
+
+.order-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.order-item>image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.order-item>text {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #333333;
+}
+
+.order-item>.num {
+  height: 32rpx;
+  background: #FF6868;
+  border-radius: 16rpx 16rpx 16rpx 0;
+  text-align: center;
+  padding: 0rpx 10rpx;
+  color: #FFFFFF;
+  position: absolute;
+  right: -30rpx;
+  top: -10rpx;
+  font-size: 22rpx;
+}
+.customer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

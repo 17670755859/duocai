@@ -1,0 +1,39 @@
+<!--修改-->
+<view class="container">
+  <view class="goods-title">
+    <view></view>
+    <text>商品列表</text>
+  </view>
+  <view class="product-box">
+  <view class="product-item" wx:for="{{list}}">
+    <image src="{{url+item.sku_image}}" class="product-item-image"></image>
+    <view class="product-item-content">
+      <view class="product-item-title">
+        <view class="dc">{{item.goods_type == 1 ? '多采' : item.goods_type == 2? '优选' : item.goods_type == 3 ? '京东' : '未知'}}</view>
+        <text class="title">{{item.sku_name}}</text>
+        <text class="num">X{{item.num}}</text>
+      </view>
+
+      <view class="desc">{{item.introduction}}</view>
+
+      <view class="save-price">已省¥88.88</view>
+
+      <view class="price-box">
+      <view class="price-num">
+        <view class="cur-price">¥{{item.price}}</view>
+        <view class="ori-price">¥{{item.skuMarketPrice}}</view>
+      </view>
+      
+        <view class="stepper">
+          <van-stepper bind:change="onChange" data-index="{{index}}" value="{{item.num}}" integer />
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+</view>
+
+<view class="options-btn {{isIPhoneX?'iphoneXPadding':''}}">
+<view class="confirm" bindtap="confirm">提交</view>
+</view>

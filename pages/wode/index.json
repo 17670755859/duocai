@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText":"我的",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "tabbar": "/cutom_tab_bar/tabbar",
+    "num": "./num/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "多采",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index"
+  }
+}

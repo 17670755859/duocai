@@ -1,0 +1,85 @@
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+  <view class="nav-wrap" style='height: {{statusbarH*2 + 80}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;'>
+      <view class="nav-community" bindtap="toIndexCommunity">
+        <image src="/images/shouye/img1.png" class="address-img"></image>
+        <text class="name">{{userInfo.company_name}}</text>
+      </view>
+
+      <view class="search {{isIphoneX?'isIphoneX':''}}" bindtap="toSearch">
+        <image src="/images/search.png"></image>
+        <input type="text" placeholder="{{keyword || '请输入关键字'}}" class="input" placeholder-class="input-placeholder" disabled />
+      </view> 
+    </view>
+  </view>
+  <view class="back" style="margin-top:{{statusbarH*2 + 80}}px"></view>
+
+  <view class="content-box" style='margin-top: -200rpx;' wx:if="{{filters.include(permissions, 8) || filters.include(permissions, 7)}}">
+    <view class="daicai-box">
+      <view class="dc-content" bindtap="toDuizhangdan" wx:if="{{filters.include(permissions, 8)}}">
+        <text class="dc-content-text-1">{{mounth}}月已采购金额</text>
+        <text class="dc-content-text-2">{{reserved_money}}</text>
+        <text class="dc-content-text-3">{{mounth}}月剩余信用额度</text>
+        <text class="dc-content-text-4">{{shengyu_money}}</text>
+      </view>
+      <view class="dc-content" bindtap="toCaigouyuebao" wx:if="{{filters.include(permissions, 7)}}">
+        <text class="dc-content-text-1">{{mounth}}月代采金额</text>
+        <text class="dc-content-text-2">{{cai_money || '0'}}</text>
+        <text class="dc-content-text-3">代采已省金额（元）</text>
+        <text class="dc-content-text-4">{{year_sum_jian || '0'}}</text>
+      </view>
+    </view>
+
+    <view class="ads">
+      <swiper indicator-dots="{{true}}" style="width: 100%;height:222rpx;" autoplay="{{true}}" interval="{{2000}}">
+
+        <swiper-item style="width: 100%;height:222rpx;" wx:key="index" wx:for="{{banners}}">
+          <image src="{{url+item}}" class="banner" mode="aspectFill"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <!-- 采购需求 -->
+    <view class="caigou-list" wx:if="{{filters.include(permissions, 1)}}">
+      <view class="caigou-title">
+        <view></view>
+        <text>采购需求(共{{list.length}}条)</text>
+      </view>
+      <view class="nodata" wx:if="{{!list.length}}">
+        <image src="/images/noData.png"></image>
+        <view class="tips">暂无数据</view>
+      </view>
+      <view class="caigou-item" wx:for="{{list}}" wx:key="order_id" data-id="{{item.order_id}}" bindtap="toCaigoushenqing">
+        <image src="{{item.headimg ? url+item.headimg : '/images/header1.png'}}" class="header"></image>
+        <view class="cg-content">
+          <view class="cg-content-view-1">
+            <text class="name">{{item.name}}</text>
+            <view class="status">{{item.status_text}}</view>
+            <text class="num">{{item.order_goods.length}}个</text>
+            <image src="/images/right.png" class="right"></image>
+          </view>
+          <view class="cg-content-view-2">
+            <text class="time">{{item.time}}</text>
+            <text class="price">¥{{item.order_money}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="groud">
+      <view class="left" data-type="{{0}}" bindtap="toDaiCai">
+        <image class="m-1" src="/images/index/m-1.png"></image>
+      </view>
+      <view class="right">
+        <image class="m-2" data-type="{{1}}" bindtap="toDaiCai" src="/images/index/m-2.png"></image>
+        <image class="m-3" data-type="{{2}}" bindtap="toDaiCai" src="/images/index/m-3.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<tabbar activeIdx="{{0}}" carNum="{{carNum}}"></tabbar>

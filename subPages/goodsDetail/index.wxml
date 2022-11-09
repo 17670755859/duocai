@@ -1,0 +1,121 @@
+<!-- 商品详情 -->
+<view class="container">
+
+  <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;'>
+      <view class="nav-back" bindtap="navigateBack">
+        <image src="/images/back.png"></image>
+      </view>
+      <text class="nav-name">商品详情</text>
+    </view>
+  </view>
+  <!-- <image src="{{url+goodInfo.goods_image}}" alt="" class="goods-image" /> -->
+  <view class="swiper-box">
+      <swiper indicator-dots="{{true}}" autoplay="{{true}}" style="border-radius: 10rpx;width:100%;height: 750rpx;">
+        <swiper-item wx:for="{{goodInfo.banner}}" style="border-radius: 10rpx;width:100%;height: 750rpx;">
+          <!-- <image src="/images/5cbe7bcc15503.png" class="swiper-image"></image> -->
+          <view class="goods-image"  style="background-image: url('{{url+item}}');"></view>
+        </swiper-item>
+      </swiper>
+    </view>
+  <view class="goods-detail">
+    <view class="price">
+      <text class="cur-unit">¥</text>
+      <text class="cur-price">{{goodInfo.price}}</text>
+      <text class="ori-price">¥{{goodInfo.market_price}}</text>
+      <view class="stepper">
+        <van-stepper value="{{goodNum}}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="goods-title-detail">
+      <view>{{goodInfo.goods_type == 1 ? '代采' : goodInfo.goods_type == 2 ? '优选' : '京东'}}</view>
+      <text>{{goodInfo.goods_name}}</text>
+    </view>
+    <view class="content">{{goodInfo.sku_name}}</view>
+    <view class="collect" data-status="{{goodInfo.collect_num}}" data-skuid="{{goodInfo.sku_id}}"
+    data-goodid="{{goodInfo.goods_id}}" bindtap="collectionHandler">
+      <image src="{{goodInfo.collect_num == 1 ? '/images/collect-active.png' : '/images/collect.png'}}"></image>
+      <text>收藏</text>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <view class="goods-detail">
+    <view class="price-box-title">
+      <view></view><text>费用信息</text>
+    </view>
+    <view class="price-list">
+      <!-- <view class="price-item">
+        <image src="/images/fu.png"></image>
+        <text class="price-item-title">服务费</text>
+        <text class="price-item-content">3%</text>
+      </view> -->
+
+      <view class="price-item">
+        <image src="/images/chu.png"></image>
+        <text class="price-item-title">仓储费</text>
+        <text class="price-item-content">¥{{goodInfo.storage}}/{{goodInfo.unit || '件'}}</text>
+      </view>
+
+      <view class="price-item">
+        <image src="/images/jian.png"></image>
+        <text class="price-item-title">分拣费</text>
+        <text class="price-item-content">¥{{goodInfo.sorting}}/{{goodInfo.unit || '件'}}</text>
+      </view>
+
+      <view class="price-item">
+        <image src="/images/yun.png"></image>
+        <text class="price-item-title">运费</text>
+        <text class="price-item-content">¥{{goodInfo.freight}}/{{goodInfo.unit || '件'}}</text>
+      </view>
+
+      <view class="price-item">
+
+        <text class="price-item-title-1">外包装体积</text>
+        <text class="price-item-content-1">{{goodInfo.chang}}*{{goodInfo.kuan}}*{{goodInfo.gao}}={{goodInfo.volume}}立方米</text>
+      </view>
+      <view class="price-item">
+
+        <text class="price-item-title-1">重量</text>
+        <text class="price-item-content-1">{{goodInfo.weight}}kg</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="divider"></view>
+  <view class="goods-detail">
+    <van-tabs active="{{ active }}" title-active-color="#2362ED" title-inactive-color="#333333" color="#2362ED">
+      <van-tab title="商品详情">
+      
+        <rich-text nodes="{{goodInfo.goods_content}}"></rich-text>
+
+      </van-tab>
+      <van-tab title="规格参数">
+      
+      <view class="space">
+      <view class="space-item" wx:for="{{goodInfo.goods_attr_format}}">
+        <text>{{item.attr_name}}</text>
+        <text>{{item.attr_value_name}}</text>
+      </view>
+
+      </view>
+      </van-tab>
+
+    </van-tabs>
+
+  
+  </view>
+</view>
+<view class="car-box" bindtap="goCart">
+  <image src="/images/car.png" class="car"></image>
+  <view class="car-num">{{carNum}}</view>
+</view>
+
+<view class="add-car-box {{isIPhoneX?'iphoneXPadding':''}}">
+  <text class="add-car-box-text1">共{{goodNum}}件，已省</text>
+  <text class="add-car-box-text2">￥</text>
+  <text class="add-car-box-text3">{{goodInfo.price*goodNum}}</text>
+  <view class="add-car-box-btn1" data-type="1" bindtap="submitHandler">加入购物车</view>
+  <view class="add-car-box-btn2" data-type="2" bindtap="submitHandler">立即采购</view>
+</view>

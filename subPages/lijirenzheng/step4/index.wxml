@@ -1,0 +1,11 @@
+
+<view class="commen-view">
+
+<image src="/images/xxzfcg.png" class="xxzfcg"></image>
+ <text class="text1">提交成功！</text>
+ <text class="text2">我们将在一个工作日内与您渠道联系。</text>
+
+ <view class="confirm" bindtap="confirm">确定</view>
+
+ <view class="fuwurexian fuwurexian1">服务热线:453-5464-561 8:00-18:00</view>
+</view>

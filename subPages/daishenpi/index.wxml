@@ -1,0 +1,67 @@
+<!-- 待审核 -->
+<scroll-view class="list" scroll-y style="height: {{height}}px;" refresher-threshold="{{300}}" refresher-triggered="{{triggered}}" bindscrolltolower="bindScrollToLower">
+
+  <!-- <view class="shls" bindtap="toShenhenlishi">
+    <text>审核历史</text>
+    <image src="/images/right.png"></image>
+  </view> -->
+  <van-checkbox-group value="{{ result }}" bind:change="onCheckBoxChange">
+    <view class="order-list">
+      <no-search wx:if="{{!list.length}}"></no-search>
+      <view class="order-item" wx:for="{{list}}">
+        <van-checkbox name="{{index}}"></van-checkbox>
+
+        <view class="order-content" data-id="{{item.order_id}}" catchtap="toOrderDetail">
+          <view class="order-num">
+            <text class="order-num-text1">{{item.order_no}}</text>
+            <text class="order-num-text2">{{item.time}}</text>
+            <image src="/images/right1.png"></image>
+          </view>
+
+          <image src="/images/line.png" class="line"></image>
+
+          <view class="order-avatar">
+            <image src="{{item.headimg ? url + headimg : '/images/header1.png'}}" class="avatar"></image>
+            <view class="order-avatar-name">
+              <view class="flex">
+                <text>{{item.name}}</text>
+                <text wx:if="{{item.jobName}}">&nbsp;{{item.jobName}}({{item.departmentName}})</text>
+              </view>
+              <view class="order-avatar-num">
+                <text>采购数量:{{item.goods_num}}</text>
+                <text>合计金额：</text>
+                <text>￥{{item.order_money}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- <scroll-view scroll-x style="height:124rpx;width: 100%;margin-top:64rpx" scroll-left="{{0}}">
+                        <image src="/images/header.png" class="image-item" wx:for="{{8}}"></image>
+                    </scroll-view> -->
+          <scroll-view scroll-x="true" class="image-list" style="width:{{listWidth}}px">
+            <!-- <view  class="image-box"> -->
+            <image src="{{url+item.sku_image}}" class="image-item" wx:for="{{item.order_goods}}"></image>
+            <!-- </view> -->
+
+          </scroll-view>
+        </view>
+
+      </view>
+    </view>
+
+
+
+  </van-checkbox-group>
+
+</scroll-view>
+
+<!-- 驳回 -->
+<bohui id="bohui" show="{{show_bh}}" bind:confirm="overruleHandler" />
+
+<view class="option {{isIPhoneX?'iphoneXPadding':''}}" wx:if="{{list.length}}">
+  <van-checkbox bind:change="selectAll" name="a" value="{{checked}}" style="margin-left: 24rpx;">全选，<text style="font-size: 28rpx">已选23件</text></van-checkbox>
+  <view class="flex">
+    <view class="cancel" data-type="1" bindtap="confirm">驳回</view>
+    <view class="confirm" data-type="2" bindtap="confirm">确定</view>
+  </view>
+</view>

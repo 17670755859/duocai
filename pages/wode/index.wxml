@@ -1,0 +1,194 @@
+<!-- 我的 -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<!-- 已登录状态 -->
+<block wx:if="{{isLogin}}">
+<view class="container">
+  <view class="wode-back">
+    <image src="/images/wode-back.png"></image>
+
+    <view class="introduce">
+      <view class="yry">
+        <text>{{userInfo.company_name}}</text>
+        <image src="/images/yrz.png"></image>
+      </view>
+      <view class="member">
+        <text>{{userInfo.source_member}}</text>
+        <text>会员值</text>
+      </view>
+
+    </view>
+  </view>
+
+
+
+  <view class="commen-box">
+    <view class="commen-view">
+      <view class="person" >
+        <image class="header" src="{{userInfo.headimg || '/images/header1.png'}}"> </image>
+        <text class="name"> 你好,{{userInfo.realname}}</text>
+
+
+        <view class="cgr" hover-class="none" hover-stop-propagation="false" wx:if="{{userInfo.job_name}}">
+          {{userInfo.job_name}}
+        </view>
+
+      </view>
+
+      <view class="zd">
+        <view bindtap="toCgyb" wx:if="{{filters.include(permissions, 7)}}">
+          <text>采购月报</text>
+          <image src="/images/cgyb.png"></image>
+        </view>
+        <view bindtap="toDZD" wx:if="{{filters.include(permissions, 8)}}">
+          <text>对账单({{mounth}}月)</text>
+          <image src="/images/dzd.png"></image>
+        </view>
+
+      </view>
+    </view>
+
+
+    <view class="commen-view">
+      <view class="commen-view-title">
+        <text class="title">订单管理</text>
+      </view>
+      <view class="order-list">
+        <view class="order-item" bindtap="toDaiShenPi">
+          <image src="/images/order/dsp.png"></image>
+          <text>待审批</text>
+          <num num="{{orderNums['5']}}"></num>
+        </view>
+
+        <view class="order-item" bindtap="toDaixiadan">
+          <image src="/images/order/dxd.png"></image>
+          <text>待下单</text>
+          <num num="{{orderNums['77']}}"></num>
+        </view>
+
+        <view class="order-item" bindtap="toDaishouhuo" data-status="3">
+          <image src="/images/order/dsh.png"></image>
+          <text>待收货</text>
+          <num num="{{orderNums['3']}}"></num>
+        </view>
+
+        <view class="order-item" bindtap="toDaishouhuo" data-status="4">
+          <image src="/images/order/ysh.png"></image>
+          <text>已收货</text>
+          <num num="{{orderNums['4']}}"></num>
+        </view>
+
+        <view class="order-item" bindtap="toTuihuanhuo">
+          <image src="/images/order/thh.png"></image>
+          <text>退换货</text>
+          <num num="{{orderNums['11']}}"></num>
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class="commen-view">
+      <view class="commen-view-title" bindtap="toCaigoushenqing">
+        <text class="title">我的申请</text>
+        <image src="/images/right.png"></image>
+      </view>
+      <view class="order-list">
+        <view class="order-item" bindtap="toCaigoushenqing" data-status='5'>
+          <image src="/images/order/adsh.png"></image>
+          <text>待审核</text>
+          <num num="{{orderNums['5']}}"></num>
+        </view>
+
+        <view class="order-item" bindtap="toCaigoushenqing" data-status='9'>
+          <image src="/images/order/ashz.png"></image>
+          <text>审核中</text>
+          <view class="{{orderNums['9']}}"></view>
+        </view>
+
+        <view class="order-item" bindtap="toCaigoushenqing" data-status='6'>
+          <image src="/images/order/aytg.png"></image>
+          <text>已通过</text>
+          <num num="{{orderNums['6']}}"></num>
+        </view>
+
+        <view class="order-item" bindtap="toCaigoushenqing" data-status='7'>
+          <image src="/images/order/aybh.png"></image>
+          <text>已驳回</text>
+          <num num="{{orderNums['7']}}"></num>
+        </view>
+
+        <view class="order-item" bindtap="toCaigoushenqing" data-status='8'>
+          <image src="/images/order/aycx.png"></image>
+          <text>已撤消</text>
+          <num num="{{orderNums['8']}}"></num>
+        </view>
+      </view>
+    </view>
+    <view class="commen-view">
+      <view class="commen-view-title" bindtap="toMyTeam" wx:if="{{filters.include(permissions, 6)}}">
+        <text class="title">我的小队</text>
+        <text class="num">{{peopleNum}}人</text>
+        <image src="/images/right.png"></image>
+      </view>
+
+      <view class="commen-view-title" style="margin-top:64rpx" wx:if="{{filters.include(permissions, 2)}}" bindtap="toCaigoutongji">
+        <text class="title">采购统计</text>
+        <image src="/images/right.png"></image>
+      </view>
+    </view>
+
+    <view class="commen-view" wx:if="{{filters.include(permissions, 9)}}">
+      <view class="commen-view-title" bindtap="toSetting">
+        <text class="title">设置</text>
+        <image src="/images/right.png"></image>
+      </view>
+
+      <view class="commen-view-title" style="margin-top:64rpx" wx:if="{{filters.include(permissions, 4)}}" bindtap="toShoucang">
+        <text class="title">我的收藏</text>
+        <image src="/images/right.png"></image>
+      </view>
+
+      <view class="commen-view-title" style="margin-top:64rpx" wx:if="{{filters.include(permissions, 5)}}">
+        <text class="title">我的客服</text>
+        <image src="/images/right.png"></image>
+        <button open-type="contact" class="customer"></button>
+      </view>
+
+      <view class="commen-view-title" style="margin-top:64rpx" bindtap="toDaicai">
+        <text class="title">帮我代采</text>
+        <image src="/images/right.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view>版本v1.0.1</view>
+</block>
+
+
+<!-- 未登录状态 -->
+<block wx:else>
+
+<view class="container">
+  <view class="wode-back">
+    <image src="/images/wode-back.png"></image>
+
+    <view class="no-login-tips">
+     <text class="no-login-tips-text1">您好，欢迎使用多采</text>
+     <text class="no-login-tips-text2">请按以下引导进行操作</text>
+   
+
+    </view>
+
+ 
+  </view>
+
+  <view class="process-box">
+    <view class="process-box-view sqsydc" bindtap="toQiyerenzheng">申请使用多采</view>
+    <view class="process-box-view yyzh" bindtap="toLogin">已有账号,立即登录</view>
+    <text class="sqtyzh" bindtap="toShenqingtiyan">申请体验账号</text>
+    </view>
+
+</view>
+
+</block>
+<tabbar activeIdx="{{4}}" carNum="{{carNum}}"></tabbar>

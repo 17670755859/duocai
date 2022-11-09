@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "navigationBarBackgroundColor": "#2968ed",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "chexiao": "/components/chexiao/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "confirm": "./modules/confirm/index",
+    "modify": "./modules/modify/index",
+    "allPass": "./modules/allPass/index",
+    "bohui": "./modules/bohui/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "chexiao-order":"/components/cexiaoOrder/index",
+    "no-data": "/components/noData/index"
+  }
+}

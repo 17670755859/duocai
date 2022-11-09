@@ -1,0 +1,149 @@
+<!-- 采购详情 -->
+<!-- <view class="cg-box">
+    <view class="cg-title">
+        <image class="" src="/images/dsh.png"></image>
+        <text>待审核</text>
+    </view>
+</view> -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+  <!-- <view class="nav-wrap" style='height: {{statusbarH*2 + 20}}px;'>
+    <view class='nav-title' style='height: {{statusbarH*2 + 44}}px;'>
+      <image src="/images/left1.png" bindtap="naviBack"></image>
+      <text>采购详情</text>
+
+    </view>
+  </view> -->
+  <view class="background"></view>
+  <view class="cg-box">
+    <view class="cg-title" wx:if="{{status==1}}">
+      <image class="" src="/images/dsh.png"></image>
+      <text>{{order_status_text}}</text>
+    </view>
+
+    <view class="cg-title" wx:if="{{status==2}}">
+      <image class="" src="/images/shz.png"></image>
+      <text>审核中</text>
+    </view>
+
+    <view class="cg-title" wx:if="{{status==3}}">
+      <image class="" src="/images/ytg.png"></image>
+      <text>已通过</text>
+    </view>
+
+
+    <view class="cg-title" wx:if="{{status==4}}">
+      <image class="" src="/images/ycx.png"></image>
+      <text>已撤消</text>
+    </view>
+
+    <view class="cg-title" wx:if="{{status==5}}">
+      <image class="" src="/images/ybh.png"></image>
+      <text>已驳回</text>
+
+      <view class="ckyy" bindtap="showCKYY">查看原由</view>
+    </view>
+
+    <view class="detail-box">
+      <view class="order">
+        <view class="order-title">
+          <view></view>
+          <text>{{name}}</text>
+          <text wx:if="{{job_name}}">{{job_name}}({{department_name}})</text>
+        </view>
+        <view class="order-num" hover-class="none" hover-stop-propagation="false">
+          NO:{{order_no}} {{time}}
+        </view>
+      </view>
+
+      <view class="goods-info">
+        <view class="goods-title">
+          <view></view>
+          <text>商品信息</text>
+        </view>
+
+        <view class="goods-item goods-item-margin">
+          <text>数量</text>
+          <text>{{num}}件</text>
+        </view>
+        <view class="goods-item">
+          <text>总金额</text>
+          <text>￥{{orderMoney}}</text>
+        </view>
+        <view class="goods-item">
+          <text>备注</text>
+          <text>{{remark}}</text>
+        </view>
+      </view>
+
+      <view class="product-box">
+
+        <view class="goods-title">
+          <view></view>
+          <text>商品列表</text>
+        </view>
+
+        <view class="product-item product-item-margin" wx:for="{{list}}">
+          <image src="{{url+item.sku_image}}" class="product-item-image"></image>
+          <view class="product-item-content">
+            <view class="product-item-title">
+              <view class="dc">{{item.goods_type == 1 ? '多采' : item.goods_type == 2 ? '优选' : '京东'}}</view>
+              <text class="title">{{item.sku_name}}</text>
+              <text class="num">X{{item.num}}</text>
+            </view>
+
+            <view class="desc">{{item.introduction}}</view>
+            <view class="save-price">已省¥{{filters.toFix(item.skuMarketPrice - item.skuPrice)}}</view>
+
+            <view class="price-box">
+              <view class="cur-price">¥{{item.skuPrice}}</view>
+              <view class="ori-price">¥{{item.skuMarketPrice}}</view>
+
+              <!-- <view class="price-confirm" catchtap="confirm" wx:if="{{order_status == '5'}}">确认</view> -->
+              <view class="price-modify" data-index="{{index}}" catchtap="modify" wx:if="{{order_status == '5'}}">修改</view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class="options-btn {{isIPhoneX?'iphoneXPadding':''}}" wx:if="{{order_status == '5'}}">
+  <view class="cancel" bindtap="toBohui">全部驳回</view>
+  <view class="confirm" bindtap="toAllPass">全部通过</view>
+</view>
+
+<!-- 确认弹窗 -->
+<confirm id="confirm" />
+
+<!-- 修改弹窗 -->
+<modify id="modify" goods="{{modifyGoods}}" show="{{show_xg}}" bind:confirm="modifyHandler"/>
+
+<!-- 全部确认通过 -->
+<allPass id="allPass" show="{{show_tg}}" order="{{order_no}}" list="{{list}}" totalNum="{{num}}" totalMoney="{{orderMoney}}" bind:confirm="adoptHandler"/>
+
+<!-- 驳回 -->
+<bohui id="bohui" show="{{show_bh}}" bind:confirm="overruleHandler" />
+<!-- 查看原由 -->
+
+
+<!-- <van-dialog use-slot show="{{ show }}" show-cancel-button="{{false}}" showConfirmButton="{{false}}">
+
+  <view class="ckyy-box">
+
+    <view class="ckyy-title">驳回原由</view>
+
+    <view class="ckyy-content">库房中还有留有库存，请前往库房领取库房中还有留有库存，请前往库房领取库房中还有留有库存，请前往库房领取库房中还有留有库存，请前往库房领取库房中还有留有库存，请前往库房领取</view>
+
+
+    <view class="options-btn ckyy-options-btn">
+      <view class="cancel" bindtap="onClose">取消</view>
+      <view class="confirm" bindtap="onClose">确认</view>
+    </view>
+  </view>
+
+
+</van-dialog> -->

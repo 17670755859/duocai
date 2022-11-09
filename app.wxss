@@ -1,0 +1,140 @@
+.iphoneXPadding {
+  padding-bottom: 68rpx;
+}
+
+
+/* 带蓝色竖状条的标题 */
+
+.goods-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.goods-title>view {
+  width: 8rpx;
+  height: 32rpx;
+  background: #6191FD;
+}
+
+.goods-title>text {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-left: 20rpx
+}
+
+
+/* 自定义title和返回按钮 */
+
+.nav-wrap {
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  z-index: 10;
+
+}
+
+.nav-back {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24rpx;
+}
+
+.nav-back>image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.nav-title>image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.nav-title>text {
+  flex: 1;
+  /* border: 1px solid red; */
+  text-align: center;
+  font-size: 36rpx;
+  margin-right: 24rpx;
+}
+
+.nav-name {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-title {
+
+  margin: auto;
+  font-size: 32rpx;
+  color: #fff;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* width: 100%; */
+}
+
+
+.nav-title .name {
+  font-size: 30rpx;
+  color: #FFFFFF;
+  margin-left: 20rpx;
+
+}
+
+/* 购物车加减 */
+.stepper-cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10rpx;
+}
+
+.stepper-cart>image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.stepper-cart>input {
+  width: 60rpx;
+  height: 56rpx;
+  background: #F7F8FA;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 56rpx;
+  color: #333333;
+  font-size: 28rpx;
+  margin: 0 4rpx;
+}
+/*公用状态颜色*/
+.red {
+  color: #FF6868;
+}
+
+.orgin {
+  color: #FF6200;
+}
+
+.green {
+  color: rgb(116, 184, 14);
+}
+
+.gray {
+  color: #CCCCCC;
+}
+
+.blue {
+  color: #2362ED;
+}

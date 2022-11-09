@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText":"代采",
+  "usingComponents": {
+    "tabbar": "/cutom_tab_bar/tabbar",
+    "van-search": "@vant/weapp/search/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "no-data": "/components/noData/index"
+  }
+}

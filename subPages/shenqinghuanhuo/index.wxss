@@ -1,0 +1,159 @@
+@import "/commen/caigou.wxss";
+page {
+  background: #F7F8FA;
+}
+.container{
+  padding-bottom: 50rpx;
+}
+.commen-view{
+  width: 92%;
+  margin: 24rpx auto 0;
+  padding: 32rpx 24rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  box-sizing: border-box;
+}
+.commen-view-padding{
+  padding: 0 24rpx ;
+}
+.commen-view-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.commen-view-title>view{
+  width: 8rpx;
+  height: 32rpx;
+  background: #6191FD;
+}
+.commen-view-title>text{
+  font-size: 30rpx;
+font-weight: 500;
+color: #333333;
+margin-left: 12rpx;
+}
+.goods-item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24rpx;
+}
+.goods-item-text1{
+  font-size: 28rpx;
+font-weight: 400;
+color: #999999;
+width: 100rpx;
+}
+.goods-item-text2{
+  flex: 1;
+  font-size: 28rpx;
+font-weight: 400;
+color: #333333;
+}
+
+.van-cell-item{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 34rpx 0;
+/* margin: 24rpx; */
+}
+.van-cell-item-border{
+  border-bottom: 1rpx solid #EEEEEE;
+
+}
+.van-cell-item-text1{
+  flex: 1;
+  font-size: 30rpx;
+font-weight: 400;
+color: #333333;
+}
+.van-cell-item-text2{
+  font-size: 30rpx;
+font-weight: 400;
+color: #333333;
+}
+
+.product-item{
+  padding: 24rpx 0;
+}
+.radio-cell-item{
+  padding-bottom: 24rpx;
+}
+
+.input-box{
+  background: #F7F8FA;
+border-radius: 24rpx ;
+padding-bottom: 24rpx;
+}
+
+.media-list-image {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+}
+
+.media-list-image>.media-image {
+
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 12rpx;
+
+  margin-right: 26rpx;
+  margin-bottom: 26rpx;
+  position: relative;
+}
+
+.media-list-image>view>.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+
+.media-list-image>view>.close {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  right: -10rpx;
+  top: -13rpx;
+}
+
+.media-list-image>.add-image {
+  /* background: rgba(249, 249, 249, 1);
+  border: 1rpx solid #E2E2E2;
+  font-size: 60rpx;
+  color: rgba(172, 172, 172, 1);
+  line-height: 130rpx;
+  text-align: center; */
+
+  width: 140rpx;
+  height: 140rpx;
+  opacity: 1;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx dashed #CCCCCC;
+  margin-left: 24rpx;
+}
+
+.media-list-image>.add-image>image {
+  width: 40rpx;
+  height: 40rpx;
+
+}
+
+.confirm{
+  width: 92%;
+  margin: 24rpx auto;height: 88rpx;
+  background: linear-gradient(312deg, #2362ED 0%, #6191FD 100%);
+  border-radius: 44rpx ;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 34rpx;
+  color: #fff;
+}
+.commen-view-margin{
+    margin-top: 0;
+}

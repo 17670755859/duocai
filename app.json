@@ -1,0 +1,118 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cart/index",
+    "pages/daicai/index",
+    "pages/caigoushenqing/index",
+    "pages/wode/index",
+    "pages/login/index"
+  ],
+  "subPackages": [
+    {
+      "root": "subPages",
+      "pages": [
+        "login/index",
+        "search/index",
+        "searchResult/index",
+        "goodsDetail/index",
+        "caigoushenqing/index",
+        "caigouxiangqing/index",
+        "xiugai/index",
+        "daishenpi/index",
+        "shenhelishi/index",
+        "daixiadan/index",
+        "quedingxiadan/index",
+        "daishouhuo/index",
+        "weixinzhifu/index",
+        "xianxiazhifu/index",
+        "dingdanxiangqing/index",
+        "tuihuanhuo/index",
+        "tuihuanhuoxiangqing/index",
+        "shouhuoxiangqing/index",
+        "lishijilu/index",
+        "shenqinghuanhuo/index",
+        "shenqingtuihuo/index",
+        "qiyerenzhengliucheng/index",
+        "lijirenzheng/step1/index",
+        "lijirenzheng/step2/index",
+        "lijirenzheng/step3/index",
+        "lijirenzheng/step4/index",
+        "shenqingtiyan/index",
+        "shezhi/index",
+        "kaipiaoxinxi/index",
+        "zhanghuanquan/index",
+        "xiugaimima/index",
+        "zhiwushezhi/index",
+        "bumenshezhi/index",
+        "zibumenshezhi/index",
+        "xinzengbumen/index",
+        "wodexiaodui/index",
+        "tianjiarenyuan/index",
+        "wodeshoucang/index",
+        "bangwodaicai/index",
+        "duizhangdan/index",
+        "shouhuocaigouxiangqing/index",
+        "shangpinxiangqing/index",
+        "kaipiaoxinxixiugai/index",
+        "tijiaochenggong/index",
+        "selectbumen/index",
+        "xiugaibumen/index"
+      ]
+    },
+    {
+      "root": "thirdPages",
+      "pages": [
+        "caigouyuebao/index",
+        "caigoutongji/index"
+      ]
+    }
+  ],
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/menu/shouye.png",
+        "selectedIconPath": "images/menu/shouye-a.png"
+      },
+      {
+        "pagePath": "pages/daicai/index",
+        "text": "代采",
+        "iconPath": "images/menu/daicai.png",
+        "selectedIconPath": "images/menu/daicai.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "images/menu/gouwuche.png",
+        "selectedIconPath": "images/menu/gouwuche.png"
+      },
+      {
+        "pagePath": "pages/caigoushenqing/index",
+        "text": "采购申请",
+        "iconPath": "images/menu/caigoushenqing.png",
+        "selectedIconPath": "images/menu/caigoushenqing.png"
+      },
+      {
+        "pagePath": "pages/wode/index",
+        "text": "我的",
+        "iconPath": "images/menu/wode.png",
+        "selectedIconPath": "images/menu/wode-a.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

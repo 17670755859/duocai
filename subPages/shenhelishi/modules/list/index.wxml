@@ -1,0 +1,70 @@
+<scroll-view class="list" scroll-y style="height: {{height}}px;" refresher-enabled="{{true}}" refresher-threshold="{{100}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onRefresh" bindscrolltolower="bindScrollToLower">
+
+<view class="time" bindtap="showChooseDate">
+<text>{{date}}</text>
+<image src="/images/sjx-down2.png"></image>
+</view>
+    <view class="apply-item"  bindtap="toDetail" data-status='3'>
+    <view class="apply-num">
+      <text class="num">NO.2354645645767</text>
+      <text class="status ytg">已通过</text>
+      <image src="/images/right1.png"></image>
+    </view>
+    <text class="time">2021.05.06 12:00</text>
+    <image src="/images/line.png" class="line"></image>
+    <view class="goods-item" wx:for="{{3}}">
+      <image class="goods-item-image" src="/images/goods.png"></image>
+      <view class="goods-item-content">
+        <view class="goods-item-content-name">
+          <text>好好学习蓝色中性笔</text>
+          <text>X1</text>
+        </view>
+        <view class="goods-item-content-price">¥88.88</view>
+      </view>
+    </view>
+    <view class="goods-num">
+      <text>共11件，合计金额¥</text>
+      <text>99.88</text>
+    </view>
+
+  </view>
+
+
+
+
+  <view class="apply-item"  bindtap="toDetail" data-status='5'>
+    <view class="apply-num">
+      <text class="num">NO.2354645645767</text>
+      <text class="status ycx">已驳回</text>
+      <image src="/images/right1.png"></image>
+    </view>
+    <text class="time">2021.05.06 12:00</text>
+    <image src="/images/line.png" class="line"></image>
+    <view class="goods-item" wx:for="{{3}}">
+      <image class="goods-item-image" src="/images/goods.png"></image>
+      <view class="goods-item-content">
+        <view class="goods-item-content-name">
+          <text>好好学习蓝色中性笔</text>
+          <text>X1</text>
+        </view>
+        <view class="goods-item-content-price">¥88.88</view>
+      </view>
+    </view>
+    <view class="goods-num">
+      <text>共11件，合计金额¥</text>
+      <text>99.88</text>
+    </view>
+
+ 
+  </view>
+</scroll-view>
+
+<van-action-sheet show="{{ show }}" >
+  <van-datetime-picker
+  type="year-month"
+  value="{{ currentDate }}"
+  max-date="{{ maxDate }}"
+  bind:confirm="onConfirm"
+  bind:cancel="onCancel"
+/>
+</van-action-sheet>

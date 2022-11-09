@@ -1,0 +1,296 @@
+<!-- 对账单 -->
+<view class="container">
+  <view class="timer" bindtap="chooseTimer">
+    <text>{{date}}</text>
+    <image src="/images/sjx-down2.png"></image>
+  </view>
+
+  <view class="dzd-box">
+    <image src="/images/dzd-back.png"></image>
+    <view class="dzd-price">
+      <text class="text1">{{month}}月累计(元)</text>
+      <view class="price">
+        <text>{{spent_money}}</text>
+        <view>{{month}}月10日前应还金额</view>
+      </view>
+
+      <view class="price1">
+        <text>信用额度</text>
+        <text>{{money}}</text>
+        <text>剩余信用额度</text>
+        <text>{{surplus_money}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="choose-box">
+  <view class="choose-box-item" bindtap="showTypeSelect">
+    <text>{{type}}</text>
+    <image src="/images/sjx-down2.png"></image>
+  </view>
+  <view class="choose-box-item" bindtap="showAllTypeSelect">
+    <text>{{allType}}</text>
+    <image src="/images/sjx-down2.png"></image>
+  </view>
+</view>
+
+<view class="order-detail" wx:if="{{type == '代采/优选/京东' || type == '代采'}}">
+  <view class="type">
+    <view class="slog dc">
+      <image src="/images/car1.png"></image>
+      <text>代采</text>
+    </view>
+    <view class="order-info">
+      <view>
+        <view>订单数</view>
+        <view>{{cai.num}}单</view>
+      </view>
+      <view>
+        <view>数量</view>
+        <view>{{cai.goodsNumSum}}</view>
+      </view>
+      <view>
+        <view>金额</view>
+        <view class="text3">{{cai.money}}</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="order-no" wx:if="{{cai.order_list.length == 0}}">暂无数据</view>
+  <view wx:else>
+    <view class="order-box" wx:for="{{cai.order_list}}" wx:key="index" wx:for-item="item">
+      <view class="order-num">
+        <text>{{item.time}}</text>
+        <text>订单号 {{item.order_no}}</text>
+      </view>
+
+      <view class="order-item" wx:for="{{item.goods_list}}" wx:for-item="items">
+        <image src="{{url+items.sku_image}}" class="order-item-image"></image>
+        <view class="order-item-goods">
+          <view class="title">
+            <text>{{items.goods_name}}</text>
+            <text>X{{items.num}}</text>
+          </view>
+          <text class="order-price">￥{{items.price}}</text>
+        </view>
+      </view>
+
+      <view class="total">
+        <text>共{{item.goods_num}}件,</text>
+        <text>加载全部></text>
+      </view>
+
+      <view class="total-price">
+        <text>商品总额(含{{item.goods_num}}件商品)</text>
+        <text>¥{{item.goods_money}}</text>
+      </view>
+
+
+      <view class="other-price">
+        <image src="/images/fu.png"></image>
+        <text class="other-price-title">服务费</text>
+        <text class="other-price-info">￥{{item.sum_server_money}}</text>
+      </view>
+
+      <view class="other-price">
+        <image src="/images/chu.png"></image>
+        <text class="other-price-title">仓储费</text>
+        <text class="other-price-info">￥{{item.sum_store_money}}</text>
+      </view>
+
+      <view class="other-price">
+        <image src="/images/jian.png"></image>
+        <text class="other-price-title">分拣费</text>
+        <text class="other-price-info">￥{{item.sum_sorting_money}}</text>
+      </view>
+
+      <view class=""></view>
+
+    </view>
+  </view>
+</view>
+
+
+<view class="order-detail" wx:if="{{type == '代采/优选/京东' || type == '优选'}}">
+  <view class="type">
+    <view class="slog yx">
+      <image src="/images/youxuan.png"></image>
+      <text>优选</text>
+    </view>
+    <view class="order-info">
+      <text class="text1">订单数：{{you.num}}单</text>
+      <text class="text2">数量：{{you.goodsNumSum}}</text>
+      <text class="text2">金额：</text>
+      <text class="text3">￥{{you.money}}</text>
+    </view>
+
+  </view>
+
+  <view class="order-no" wx:if="{{you.order_list.length == 0}}">暂无数据</view>
+  <view wx:else>
+    <view class="order-box" wx:for="{{you.order_list}}" wx:key="index" wx:for-item="item">
+      <view class="order-num">
+        <text>{{item.time}}</text>
+        <text>订单号 {{item.order_no}}</text>
+      </view>
+
+      <view class="order-item" wx:for="{{item.goods_list}}" wx:for-item="items">
+        <image src="{{url+items.sku_image}}" class="order-item-image"></image>
+        <view class="order-item-goods">
+          <view class="title">
+            <text>{{items.goods_name}}</text>
+            <text>X{{items.num}}</text>
+          </view>
+          <text class="order-price">￥{{items.price}}</text>
+        </view>
+      </view>
+
+      <view class="total">
+        <text>共{{item.goods_num}}件,</text>
+        <text>加载全部></text>
+      </view>
+
+      <view class="total-price">
+        <text>商品总额(含{{item.goods_num}}件商品)</text>
+        <text>¥{{item.goods_money}}</text>
+      </view>
+
+
+      <view class="other-price">
+        <image src="/images/fu.png"></image>
+        <text class="other-price-title">服务费</text>
+        <text class="other-price-info">￥{{item.sum_server_money}}</text>
+      </view>
+
+      <view class="other-price">
+        <image src="/images/chu.png"></image>
+        <text class="other-price-title">仓储费</text>
+        <text class="other-price-info">￥{{item.sum_store_money}}</text>
+      </view>
+
+      <view class="other-price">
+        <image src="/images/jian.png"></image>
+        <text class="other-price-title">分拣费</text>
+        <text class="other-price-info">￥{{item.sum_sorting_money}}</text>
+      </view>
+
+      <view class=""></view>
+    </view>
+  </view>
+
+</view>
+
+<view class="order-detail" wx:if="{{type == '代采/优选/京东' || type == '京东'}}">
+  <view class="type">
+    <view class="slog jd">
+      <image src="/images/jd.png"></image>
+      <text>京东</text>
+    </view>
+    <view class="order-info">
+      <text class="text1">订单数：{{jd.num}}单</text>
+      <text class="text2">数量：{{jd.goodsNumSum}}</text>
+      <text class="text2">金额：</text>
+      <text class="text3">￥{{jd.money}}</text>
+    </view>
+
+  </view>
+
+  <view class="order-no" wx:if="{{jd.order_list.length == 0}}">暂无数据</view>
+  <view wx:else>
+    <view class="order-box" wx:for="{{jd.order_list}}" wx:key="index" wx:for-item="item">
+      <view class="order-num">
+        <text>{{item.time}}</text>
+        <text>订单号 {{item.order_no}}</text>
+      </view>
+
+      <view class="order-item" wx:for="{{item.goods_list}}" wx:for-item="items">
+        <image src="{{url+items.sku_image}}" class="order-item-image"></image>
+        <view class="order-item-goods">
+          <view class="title">
+            <text>{{items.goods_name}}</text>
+            <text>X{{items.num}}</text>
+          </view>
+          <text class="order-price">￥{{items.price}}</text>
+        </view>
+      </view>
+
+      <view class="total">
+        <text>共{{item.goods_num}}件,</text>
+        <text>加载全部></text>
+      </view>
+
+      <view class="total-price">
+        <text>商品总额(含{{item.goods_num}}件商品)</text>
+        <text>¥{{item.goods_money}}</text>
+      </view>
+
+
+      <view class="other-price">
+        <image src="/images/fu.png"></image>
+        <text class="other-price-title">服务费</text>
+        <text class="other-price-info">￥{{item.sum_server_money}}</text>
+      </view>
+
+      <view class="other-price">
+        <image src="/images/chu.png"></image>
+        <text class="other-price-title">仓储费</text>
+        <text class="other-price-info">￥{{item.sum_store_money}}</text>
+      </view>
+
+      <view class="other-price">
+        <image src="/images/jian.png"></image>
+        <text class="other-price-title">分拣费</text>
+        <text class="other-price-info">￥{{item.sum_sorting_money}}</text>
+      </view>
+
+      <view class=""></view>
+    </view>
+  </view>
+</view>
+
+<view class="order-detail">
+  <view class="type">
+    <view class="slog th">
+      <image src="/images/th.png"></image>
+      <text>退货</text>
+    </view>
+  </view>
+
+  <view class="order-no" wx:if="{{refund.order_goods.length == 0}}">暂无数据</view>
+  <view class="order-box" wx:else>
+    <view class="order-item" wx:for="{{refund.order_goods}}" wx:for-item="item">
+      <image src="{{url+item.sku_image}}" class="order-item-image"></image>
+      <view class="order-item-goods">
+        <view class="title">
+          <text>{{item.goods_name}}</text>
+          <text>X{{item.num}}</text>
+        </view>
+        <view class="th-dc">
+          <text>￥{{item.price}}</text>
+          <view wx:if="item.goods_type == 1">代采</view>
+          <view wx:elif="item.goods_type == 2">优选</view>
+          <view wx:elif="item.goods_type == 3">京东</view>
+        </view>
+      </view>
+    </view>
+    <view class="total-price">
+      <text>商品总额(含{{refund.sumRefundNum}}件商品)</text>
+      <text>¥{{refund.sumMoney}}</text>
+    </view>
+  </view>
+
+</view>
+
+<!-- 时间选择 -->
+<van-action-sheet show="{{ show }}">
+  <van-datetime-picker type="year-month" value="{{ currentDate }}" max-date="{{ maxDate }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+</van-action-sheet>
+
+<!-- 京东优选等类型选择 -->
+<van-action-sheet show="{{ typeShow }}" actions="{{ actions }}" bind:close="onCancel" bind:select="onTypeSelect" close-on-click-overlay="true" />
+
+<!-- 全部类型 -->
+
+<van-action-sheet show="{{ allTypeShow }}" actions="{{ allActions }}" bind:close="onCancel" bind:select="onAllTypeSelect" close-on-click-overlay="true" />

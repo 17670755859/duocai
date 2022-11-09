@@ -1,0 +1,13 @@
+<view class="step">
+    <view class="step-view">
+      <view wx:for="{{stepArr}}" class="{{index!=3?'step-view-info':''}} ">
+        <view class="step-num">
+          <view class="step-num-num {{index<step?'step-active-color':''}}">
+          </view>
+          <view class="step-num-line {{index<step?'step-active':''}}"></view>
+        </view>
+        <text class="{{index<step?'step-text-color':''}}">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
